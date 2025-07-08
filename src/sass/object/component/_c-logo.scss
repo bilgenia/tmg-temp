@@ -1,0 +1,11 @@
+@use '../../global' as g;
+
+.c-logo {
+  width: 100%;
+  max-width: 31.8rem;
+
+  @include g.mq(tab) {
+    width: auto;
+    max-height: 100%;
+  }
+}

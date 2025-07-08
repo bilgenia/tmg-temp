@@ -1,0 +1,57 @@
+@use '../../global' as g;
+
+.p-footer-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex: 1;
+    gap: 2.2rem;
+
+    &__top {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3.2rem;
+        list-style: none;
+        font-size: 1.6rem;
+        font-weight: var(--root--fontWeight-medium);
+        padding: 0;
+        margin: 0;
+        @include g.mq(sp) {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr 1fr;
+            border-top: 1px solid #d9d9d9;
+            gap: 1.5rem 3.2rem;
+            padding-top: 2.0rem;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2.2rem;
+        list-style: none;
+        font-size: 1.4rem;
+        font-weight: var(--root--fontWeight-regular);
+        padding: 0;
+        margin: 0;
+        @include g.mq(sp) {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr 1fr;
+            border-top: 1px solid #d9d9d9;
+            gap: 1.5rem 3.2rem;
+            padding-top: 2.0rem;
+        }
+
+    }
+
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

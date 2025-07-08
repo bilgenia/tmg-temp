@@ -1,0 +1,16 @@
+@use '../../global' as g;
+
+// キャッチーなテキストを出すためのモジュール
+// 今回は大きなバリエーションはないです。
+
+.c-catch {
+    font-size: 3.2rem;
+    font-weight: var(--root--fontWeight-bold);
+    line-height: 2.0;
+    text-align: center;
+    font-family: 'Noto Serif JP', sans-serif;
+
+    @include g.mq(sp) {
+        font-size: 2.0rem;
+    }
+}

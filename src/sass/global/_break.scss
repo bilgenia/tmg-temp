@@ -1,0 +1,21 @@
+// ブレークポイント
+
+// SnowMonkeyをベースにしているので、ブレークポイントを揃える形で作り替えました。
+// あまり一般的なブレークポイントではなさそうですが、デフォルト要素との親和性が悪くならないようここを基準にしてください。
+// 本来タブレットは範囲指定だったのですが、max-widthだけの指定にとどめています。
+// 範囲指定のものを入れる場合は個別に対応してください。
+
+$breakpoint: (
+    sp: '(max-width: 639px)',
+    tab: '(max-width: 1024px)',
+    tabOnly: '(min-width: 640px) and (max-width: 1024px)',
+    pc: '(min-width: 1025px)'
+);
+
+@use 'sass:map';
+
+@mixin mq($bp) {
+    @media #{map.get($breakpoint, $bp)} {
+        @content;
+    }
+}

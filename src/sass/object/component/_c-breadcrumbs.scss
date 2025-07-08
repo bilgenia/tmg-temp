@@ -1,0 +1,48 @@
+@use '../../global' as g;
+
+// パンクズリスト
+
+.c-breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2.1rem;
+    font-size: 1.4rem;
+    margin-block-start: var(--_margin1) ;
+
+    @include g.mq(sp) {
+        overflow-x: scroll;
+    }
+
+    @include g.mq(sp) {
+        font-size: 1.2rem;
+    }
+
+    a {
+        color: var(--root--color-black);
+    }
+
+    &__item {
+        position: relative;
+        white-space: nowrap;
+
+        &:nth-child(n+2) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &::before {
+                left: 0;
+                border: none;
+                transform: rotate(0);
+                background-image: url(@/img/icon_breadcrumbs.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                width: .55rem;
+                height: 1.1rem;
+                margin-block: 0;
+                margin-right: 2.1rem;
+            }
+        }
+    }
+}

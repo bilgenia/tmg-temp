@@ -1,0 +1,8 @@
+@use '../../global' as g;
+
+// 見出しの基礎スタイル
+.c-title {
+    font-size: 2.8rem;
+    line-height: 1.5;
+    font-weight: var(--root--fontWeight-medium);
+}

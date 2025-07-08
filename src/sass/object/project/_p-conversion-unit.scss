@@ -1,0 +1,51 @@
+@use '../../global' as g;
+
+.p-conversion-unit {
+    background-color: var(--root--color-secondary);
+    padding: 4.0rem;
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: calc(50% - 2.0rem) calc(50% - 2.0rem);
+    gap: 4.0rem;
+    @include g.mq(tab) {
+        padding: 3rem 2rem;
+        margin-top: 5rem;
+        grid-template-columns: 1fr;
+        gap: 3.0rem;
+        margin-inline: calc(-1 * var(--root--gap));
+    }
+
+    &__box {
+        background-color: var(--root--color-white);
+        border-radius: 2.0rem;
+        padding: 6.0rem 4.0rem;
+
+        @include g.mq(sp) {
+            padding: 4.0rem 2.0rem;
+        }
+    }
+
+    &__name {
+        font-size: 2.1rem;
+        text-align: center;
+        margin-bottom: 2.0rem;
+    }
+
+    &__content {
+        font-size: 1.6rem;
+        text-align: center;
+        margin-top: 2.0rem;
+    }
+
+    .smb-btn-wrapper {
+        margin-inline: auto;
+    }
+
+    // p-conversion-unit内のボタンをレスポンシブ対応
+    .smb-btn {
+        @include g.mq(sp) {
+            width: 100%;
+        }
+    }
+
+}

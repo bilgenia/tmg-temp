@@ -1,0 +1,91 @@
+@use '../../global' as g;
+
+.c-loading {
+
+    --scope--size: 100vw;
+    --scope--width: 9.2rem;
+    --scope--height: 9.2rem;
+    --scope--color-background: #fff;
+    --scope--color-gradient-start: var(--root--color-secondary);
+    --scope--color-gradient-end: var(--root--color-primary);
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .6s;
+    background-color: var(--scope--color-background);
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    text-indent: -9999px; // そもそも表示しないようにしたい。
+
+    &[aria-hidden='false'] {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    // &__item {
+    //     position: relative;
+    //     box-sizing: border-box;
+    //     width: var(--scope--width);
+    //     height: var(--scope--height);
+    //     display: inline-block;
+    //     background-image: url('@img/img_logo.svg');
+    //     background-size: 100%;
+    //     background-repeat: no-repeat;
+    //     background-position: center;
+    //     animation: animation 1.25s linear infinite;
+    //     @keyframes animation {
+    //         0% {
+    //             opacity: 0;
+    //         }
+    //         50% {
+    //             opacity: 1;
+    //         }
+    //         100% {
+    //             opacity: 0;
+    //         }
+    //     }
+    // }
+
+    [class^="loading-"] {
+        position: relative;
+        box-sizing: border-box;
+        width: 6.4rem;
+        height: 6.4rem;
+        display: inline-flex;
+        margin: 10px 20px;
+    }
+    /* Loading 14 */
+    @keyframes animation-14 {
+        0% {
+            transform: rotate(0deg)
+        }
+        100% {
+            transform: rotate(360deg)
+        }
+    }
+    .loading-14 {
+        border-radius: 100%;
+        background: conic-gradient(var(--scope--color-gradient-start),var(--scope--color-gradient-end));
+        // background: conic-gradient(var(--root--color-primary), var(--root--color-secondary));
+        animation: animation-14 2s linear infinite;
+    }
+    .loading-14:before {
+        content: '';
+        position: absolute;
+        box-sizing: border-box;
+        width: 80%;
+        height: 80%;
+        left: 10%;
+        top: 10%;
+        background: #fff;
+        border-radius: 100%;
+    }
+
+
+}

@@ -1,0 +1,66 @@
+@use '../../global' as g;
+
+.tmg-media-text {
+    display: flex;
+    text-align: left;
+    gap: var(--root--gap);
+
+    @include g.mq(sp) {
+        flex-direction: column;
+    }
+
+    &__media {
+        flex: 0 0 50%;
+        width: 100%;
+
+        img {
+            border-radius: 2.0rem;
+            overflow: hidden;
+            margin-inline: auto;
+        }
+    }
+
+    &__text {
+        flex: 1;
+        width: 100%;
+        font-size: 1.6rem;
+        line-height: 1.5;
+
+        // テキスト部分の基本装飾
+        > *:nth-child(n+2) {
+            margin-top: 2.0rem;
+        }
+        h2 {
+            font-size: 2.8rem
+        }
+        h3 {
+            font-size: 2.4rem
+        }
+        h4 {
+            font-size: 2.0rem
+        }
+    }
+
+    // オプション設定
+
+    // メディア横軸（PCだけ）
+    &[data-media-right-left="left"] {
+        flex-direction: row;
+    }
+    &[data-media-right-left="right"] {
+        flex-direction: row-reverse;
+    }
+
+    // メディア縦軸（SPだけ）
+    &[data-media-top-bottom="top"] {
+        @include g.mq(sp) {
+            flex-direction: column;
+        }
+    }
+    &[data-media-top-bottom="bottom"] {
+        @include g.mq(sp) {
+            flex-direction: column-reverse;
+        }
+    }
+
+}

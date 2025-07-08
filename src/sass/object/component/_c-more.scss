@@ -1,0 +1,42 @@
+@use '../../global' as g;
+
+.c-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.0rem;
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 0;
+    @include g.mq(sp) {
+        justify-content: flex-end;
+    }
+
+    > a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        gap: .85rem;
+        transition: all .3s;
+        &:hover {
+            text-decoration: underline;
+            transition: all .3s;
+            &::before {
+                left: 6px;
+                background-position-x: 3px;
+            }
+        }
+
+        &::before {
+            content: '';
+            left: 0;
+            display: block;
+            width: 1.0rem;
+            height: 1.0rem;
+            // background-image: url('@img/');
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            transition: all .3s;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@use '../../global' as g;
+
+.p-footer-about {
+    display: grid;
+    grid-template-columns: 50.0rem 1fr;
+    align-items: flex-end;
+    gap: 2.0rem;
+    max-width: var(--root--maxWidth);
+    margin-block: 1.0rem 0;
+    margin-inline: auto;
+    z-index: initial;
+    @include g.mq(tab) {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        gap: 2.0rem;
+        margin: 0;
+    }
+}

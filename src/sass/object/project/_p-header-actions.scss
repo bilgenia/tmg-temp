@@ -1,0 +1,91 @@
+@use '../../global' as g;
+
+.p-header-actions {
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 3.0rem;
+        margin: 0;
+        padding: 0;
+
+        @include g.mq(sp) {
+            line-height: 0;
+        }
+    }
+
+    &__item {
+        // スマホ表示切り替え
+        &[data-name="subNav"] {
+            display: none;
+        }
+        @include g.mq(tab) {
+            display: none;
+            &[data-name="subNav"] {
+                display: block;
+            }
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: .55rem;
+            font-size: 1.8rem;
+            font-weight: var(--root--fontWeight-medium);
+            color: var(--root--color-black);
+            text-decoration: none;
+
+            &::before {
+                content: '';
+                display: block;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+
+            &[href*="access"] {
+                &::before {
+                    background-image: url(@/img/icon_header_access.svg);
+                    width: 1.72rem;
+                    height: 2.48rem;
+                }
+            }
+            &[href*="contact"] {
+                &::before {
+                    background-image: url(@/img/icon_header_contact.svg);
+                    width: 2.4rem;
+                    height: 1.8rem;
+                }
+            }
+        }
+
+        // 電話ボタン
+        a[href^="tel:"] {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .6rem;
+            text-decoration: none;
+            font-size: 3.2rem;
+            font-weight: var(--root--fontWeight-bold);
+            &::before {
+                content: '';
+                display: block;
+                background-image: url(@/img/icon_header_tel.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                width: 3.2rem;
+                height: 3.6rem;
+            }
+        }
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.0rem;
+    }
+}

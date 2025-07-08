@@ -1,0 +1,13 @@
+{
+    "phpVersion": "8.1",
+    "config": {
+        "WP_DEBUG": true,
+        "WP_ENV": "development"
+    },
+    "plugins": [
+        "https://downloads.wordpress.org/plugin/wp-multibyte-patch.zip"
+    ],
+    "mappings": {
+        "wp-content/plugins/my-snow-monkey": "./src"
+    }
+}

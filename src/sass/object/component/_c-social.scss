@@ -1,0 +1,41 @@
+@use '../../global' as g;
+
+// SNS系
+// 親に付与するとアンカーに応じてリンクを変える。
+// 横並びリスト時はul要素に__listを付与。
+
+.c-social {
+    a {
+        display: block;
+        width: 4.0rem;
+        height: 4.0rem;
+        text-indent: -9999px;
+        text-decoration: none;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        // &[href*="x.com"] {
+        //     background-image: url('@img/');
+        // }
+        // &[href*="facebook.com"] {
+        //     background-image: url('@img/');
+        // }
+        // &[href*="instagram.com"] {
+        //     background-image: url('@img/');
+        // }
+        // &[href*="youtube.com"] {
+        //     background-image: url('@img/');
+        // }
+        // &[href*="line.me"] {
+        //     background-image: url('@img/');
+        // }
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        gap: 2.0rem;
+        padding: 0;
+        margin: 0;
+    }
+}

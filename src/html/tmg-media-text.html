@@ -1,0 +1,49 @@
+<!--
+
+SMBのメディアとテキストがバグってるので独自で突貫作成。
+設定を簡素にできるよう、data属性で制御してます。
+
+# 仕様
+SnowMonkeyBlocksのメディアとテキストがレスポンシブ時に微妙なバグを引き起こしていたので突貫作成。
+
+# サイズ変更と位置調整
+この2つの指定しかないです。
+
+# data属性
+## data-media-size
+メディア部分の横幅を指定します。SP時には自動的に100%になってしまいますが、PCだけ1~100の間の数値を指定できます。
+入っている数値をJSで置換していますが、%指定が前提でpxなどの単位は指定できません。突貫仕様なのですみません。
+
+## data-media-right-left
+メディアの位置を指定しますが、PCにしか反映されません。
+left: メディアを左に配置
+right: メディアを右に配置
+
+## data-media-top-bottom
+メディアの位置を指定しますが、SPにしか反映されません。
+top: メディアを上に配置
+bottom: メディアを下に配置
+
+-->
+
+<div class="tmg-media-text" data-media-size="59" data-media-right-left="right" data-media-top-bottom="top">
+    <div class="tmg-media-text__media">
+        <figure>
+            <img src="http://localhost:8888/wp-content/uploads/2025/06/e37d040600ee2d4a664ad2aff6c63821.png" alt="">
+        </figure>
+    </div>
+    <div class="tmg-media-text__text">
+        <p>装飾は最低限しかしていません。tmg-media-text__textの中に入ってるので自由にいじってください。</p>
+        <h2>見出しh2</h2>
+        <h3>見出しh3</h3>
+        <h4>見出しh4</h4>
+        <p>HTML自由入力ですが、h2~4、p、ul、aくらいにしておいてください。</p>
+        <p>動作保証はしてないプロトタイプです。</p>
+        <ul>
+            <li>リストリストリストリストリストリストリストリストリスト</li>
+            <li>リストリストリストリストリストリストリストリストリスト</li>
+            <li>リストリストリストリストリストリストリストリストリスト</li>
+        </ul>
+        <a href="#" class="tmg-button"><span class="tmg-button__label">ボタン</span></a>
+    </div>
+</div>

@@ -1,0 +1,122 @@
+@use '../../global' as g;
+
+.p-footer-info {
+    width: 100%;
+
+    &__logo {
+        width: 100%;
+        @include g.mq(sp) {
+            max-width: initial;
+        }
+    }
+
+    &__text {
+        font-size: 1.6rem;
+        font-weight: var(--root--fontWeight-regular);
+
+    }
+
+    &__tel {
+        margin-block: .9rem;
+
+        a {
+            font-size: 3.2rem;
+            font-weight: var(--root--fontWeight-bold);
+            &:before {
+                content: 'TEL';
+                margin-right: .5rem;
+                @include g.mq(sp) {
+                    content: none;
+                }
+            }
+
+            @include g.mq(sp) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                min-height: 6.0rem;
+                font-size: 2.4rem;
+                color: var(--root--color-white);
+                background-color: var(--root--color-primary);
+                text-decoration: none;
+                border-radius: 100rem;
+                padding: 1.2rem 3.0rem;
+
+                &:before {
+                    content: '';
+                    display: block;
+                    width: 3.6rem;
+                    height: 3.6rem;
+                    background-image: url('@/img/icon_button_tel_white.svg');
+                    background-size: 3.2rem 3.6rem;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    margin-right: 3.0rem;
+                }
+            }
+        }
+    }
+
+    &__address {
+        margin-block: 2.0rem 0;
+
+        @include g.mq(pc) {
+            display: flex;
+            align-items: center;
+            gap: 2.0rem;
+        }
+
+        p {
+            font-size: 1.7rem;
+        }
+
+        a[href*="access"] {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 6.0rem;
+            font-size: 1.6rem;
+            font-weight: var(--root--fontWeight-bold);
+            color: var(--root--color-white);
+            background-color: var(--root--color-primary);
+            text-decoration: none;
+            border-radius: 100rem;
+            padding: 1.2rem 3.0rem;
+            margin-top: .9rem;
+            @include g.mq(pc) {
+                width: auto;
+                min-height: auto;
+                font-size: 1.4rem;
+                font-weight: var(--root--fontWeight-medium);
+                padding: 0 3.0rem;
+                margin: 0;
+            }
+
+            &:after {
+                position: absolute;
+                content: '';
+                display: block;
+                flex-shrink: 0;
+                inset: 0;
+                width: 3.6rem;
+                height: 3.6rem;
+                background-image: url('@/img/icon_button_normal.svg');
+                background-size: 1.5rem 1.5rem;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin-block: auto;
+                margin-inline: auto 2.0rem;
+                @include g.mq(pc) {
+                    width: 1.9rem;
+                    height: 1.9rem;
+                    background-size: .8rem .8rem;
+                    margin-inline: auto .75rem;
+                }
+            }
+        }
+    }
+
+}

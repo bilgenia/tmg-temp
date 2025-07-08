@@ -1,0 +1,55 @@
+@use '../../global' as g;
+
+.wp-block-flexible-table-block-table.wp-block-flexible-table-block-table {
+    > table {
+        tr {
+            td {
+                border-color: var(--root--color-primary);
+                padding: 2.0rem;
+                @include g.mq(sp) {
+                    padding: 1.5rem 2.0rem;
+                }
+            }
+            th {
+                background: var(--root--color-accent);
+                border-color: var(--root--color-primary);
+                padding: 2.0rem;
+                @include g.mq(sp) {
+                    padding: 1.5rem 2.0rem;
+                }
+            }
+        }
+    }
+    @include g.mq(sp) {
+        &.is-scroll-on-mobile {
+            >table {
+                white-space: nowrap;
+                table-layout: initial !important;
+            }
+        }
+        img {
+            max-width: initial !important;
+        }
+    }
+
+    .is-stacked-on-mobile {
+        th {
+            text-align: center;
+        }
+        @include g.mq(tab) {
+            border-top: 1px solid var(--root--color-primary);
+            th {
+                border-top: none;
+                text-align: left;
+            }
+            td {
+                border-top: none;
+            }
+        }
+        @include g.mq(sp) {
+            th {
+                border-bottom: none;
+            }
+        }
+    }
+}

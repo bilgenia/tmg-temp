@@ -1,0 +1,20 @@
+@use '../../global' as g;
+
+.smb-media-text {
+
+    &__title {
+        font-size: 2.4rem;
+        font-weight: var(--root--fontWeight-medium);
+        color: var(--root--color-primary);
+        line-height: 1.5;
+    }
+
+
+    // ボタンにmarginを追加
+    .smb-buttons {
+        margin-block: 3.5rem 1.75rem;
+        @include g.mq(sp) {
+            margin-block: 1.5rem 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@use './break' as g;
+
+// ボタン系の共通設計
+@mixin button {
+    text-align: center;
+    font-size: 2.4rem;
+    line-height: 1.5;
+    font-weight: var(--root--fontWeight-medium);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+// 指定行数以降を三点リーダー表示
+
+@mixin text-clamp($textClamp) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $textClamp;
+}

@@ -1,0 +1,62 @@
+@use './global' as g;
+
+:root {
+    // 基本フォントサイズ
+    --root--fontSize: 1.6rem;
+    // フォントの重み設定
+    --root--fontWeight-tin: 100;
+    --root--fontWeight-light: 300;
+    --root--fontWeight-regular: 400;
+    --root--fontWeight-medium: 500;
+    --root--fontWeight-bold: 700;
+    --root--fontWeight-black: 900;
+    // 字の高さ
+    --root--lineHeight: 1.5;
+
+    // 最大横幅
+    --root--maxWidth: 1440px;
+    // 間隔調整
+    --root--gap: 4.0rem;
+
+    // カラープリセット
+    --root--color: #F6809B;
+    --root--color-primary: #F6809B;
+    --root--color-secondary: #FFF0F4;
+    --root--color-accent: #FFD9E2;
+    --root--color-font: #333333;
+    --root--color-border: #cccccc;
+    --root--color-black: #333333;
+    --root--color-gray: #cccccc;
+    --root--color-white: #ffffff;
+
+    // アニメーション共通値
+    --root--animation: all .5s;
+
+    // `アイコン
+    --root--icon-button-normal: url('@/img/icon_button_normal.svg');
+    --root--icon-button-download: url('@/img/icon_button_download.svg');
+    --root--icon-button-blank: url('@/img/icon_button_blank.svg');
+    --root--icon-button-tel: url('@/img/icon_button_tel.svg');
+    --root--icon-button-tel-white: url('@/img/icon_button_tel_white.svg');
+
+    // SnowMonkey上書き
+    --_color-text: var(--root--color-font);
+    --wp--style--global--content-size: var(--root--maxWidth);
+    --_margin1: var(--root--gap);
+    --_margin2: calc(var(--root--gap) * 2);
+    --_margin3: calc(var(--root--gap) * 3);
+    --_margin4: calc(var(--root--gap) * 4);
+    --_margin5: calc(var(--root--gap) * 5);
+    --_margin6: calc(var(--root--gap) * 6);
+    --_margin7: calc(var(--root--gap) * 7);
+
+    @include g.mq(sp) {
+        // 間隔調整
+        --root--gap: 2.0rem;
+    }
+}
+
+// Snow Monkey Blocks
+.smb-box {
+    --smb-box--border-color: var(--root--color-border);
+}

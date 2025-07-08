@@ -1,0 +1,173 @@
+@use '../../global' as g;
+@use 'sass:map';
+
+// アイコン設定をマップで管理
+$button-icons: (
+    'default': ('icon': var(--root--icon-button-normal), 'size': 1.5rem 1.5rem),
+    'download': ('icon': var(--root--icon-button-download), 'size': 1.825rem 1.685rem),
+    'blank': ('icon': var(--root--icon-button-blank), 'size': 2.266rem 1.74rem),
+    'telPC': ('icon': var(--root--icon-button-tel), 'size': 3.2rem 3.6rem),
+    'telSP': ('icon': var(--root--icon-button-tel-white), 'size': 2.3rem 2.3rem)
+);
+
+// アイコン設定のみを返すmixin
+@mixin get-button-icon($type: 'default') {
+    $config: map.get($button-icons, $type);
+    background-image: map.get($config, 'icon');
+    background-size: map.get($config, 'size');
+}
+
+.smb-buttons {
+    gap: 2.3rem 3.3rem;
+}
+
+.smb-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--root--color-white);
+    background: var(--root--color-primary);
+    font-size: 1.6rem;
+    text-align: center;
+    white-space: wrap;
+    line-height: 1.5;
+    min-width: 30.0rem;
+    height: 6.0rem;
+    border: 0;
+    border-radius: 100rem;
+    padding: 0;
+
+    // 文字の部分(左詰め・中央配置)
+    &__label {
+        font-weight: var(--root--fontWeight-bold);
+        padding-block: 1.425rem;
+        padding-inline: 6.0rem;
+        margin-inline: 0;
+        @include g.mq(sp) {
+            padding-inline: 3.4rem;
+        }
+    }
+
+    // アイコン基本設定(中央配置)
+    &::before {
+        position: absolute;
+        content: '';
+        display: block;
+        flex-shrink: 0;
+        inset: 0;
+        width: 3.6rem;
+        height: 3.6rem;
+        grid-area: icon;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin-block: auto;
+        margin-inline: auto 2.0rem;
+        // デフォルトアイコン設定
+        @include get-button-icon();
+
+        @include g.mq(sp) {
+            width: 2.8rem;
+            height: 2.8rem;
+            margin-inline: auto 1.5rem;
+        }
+    }
+
+    // ダウンロード系ファイルの場合
+    &[href$='.xlsx'],
+    &[href$='.png'],
+    &[href$='.jpeg'],
+    &[href$='.jpg'],
+    &[href$='.gif'],
+    &[href$='.pdf'] {
+        &::before {
+            @include get-button-icon('download');
+            margin-block: auto;
+        }
+    }
+
+    // 別窓の場合
+    &[target='_blank'] {
+        &::before {
+            @include get-button-icon('blank');
+            margin-block: auto;
+        }
+    }
+
+    // 電話番号の時
+    &[href*="tel:"] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.4rem;
+        font-weight: var(--root--fontWeight-bold);
+        line-height: 1;
+        text-decoration: none;
+        color: var(--root--color-white);
+        background: var(--root--color-primary);
+        padding: 1.2rem 2.0rem;
+        border-radius: 100rem;
+        width: 100%;
+        text-align: center;
+
+        @include g.mq(pc) {
+            display: inline-flex;
+            background: none;
+            width: auto;
+            min-width: initial;
+            color: var(--root--color-primary);
+        }
+
+        &:before {
+            position: relative;
+            inset: auto;
+            flex-shrink: 0;
+            content: '';
+            display: block;
+            width: 3.6rem;
+            height: 3.6rem;
+            background-image: url('@/img/icon_button_tel_white.svg');
+            background-size: 3.6rem 3.6rem;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0 2.6rem 0 0;
+
+            @include g.mq(pc) {
+                background-image: url('@/img/icon_button_tel.svg');
+                margin: 0 .8rem 0 0;
+            }
+
+        }
+        .smb-btn__label {
+            padding: 0;
+        }
+    }
+
+    &-wrapper {
+        @include g.mq(sp) {
+            width: 100%;
+        }
+    }
+
+    &:hover {
+        opacity: 0.77;
+    }
+
+    // ホーム判定の時に最小値変更
+    [data-home-page-container="true"] & {
+        @include g.mq(pc) {
+            min-width: 35.0rem;
+        }
+    }
+}
+
+
+// ホバー時のフィルターを解除
+@media (hover: hover) and (pointer:fine) {
+    .smb-btn {
+        &:active ,
+        &:focus ,
+        &:hover {
+            filter: none;
+        }
+    }
+}

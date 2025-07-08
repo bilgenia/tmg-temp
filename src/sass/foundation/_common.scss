@@ -1,0 +1,108 @@
+@use '../global' as g;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Zen+Maru+Gothic&display=swap&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+JP:wght@200..900');
+@import url('https://cdn.jsdelivr.net/npm/yakuhanjp@4.1.1/dist/css/yakuhanjp.css');
+
+html {
+    font-size: 62.5%;
+    /* デフォルトではスムーズスクロールを無効化 */
+    scroll-behavior: auto;
+    &:has(a[href="#body"]:target) {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    font-size: clamp(14px, calc(13.2571436px + 0.190476vw), 9999px);
+    font-family: YakuHanJP, 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    font-weight: var(--root--fontWeight-regular);
+    line-height: 1.5;
+    background-color: var(--root--color-white);
+    &.is-fixed {
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+[id] {
+    scroll-margin-top: var(--headerHeight);
+}
+
+* {
+    transition: none;
+}
+
+/* スムーズスクロールが必要なリンクにのみ適用 */
+a[href^="#"]:not([href="#"]) {
+    scroll-behavior: smooth;
+}
+
+/* 必要な要素にのみトランジションを適用 */
+a,
+.button,
+.link,
+.card {
+    transition: background-color .3s ease, color .3s ease, opacity .3s ease;
+}
+
+a {
+    color: var(--root--color-font);
+    &[href*="tel:"] {
+        @include g.mq(pc) {
+        pointer-events: none;
+        cursor: default;
+        text-decoration: none;
+        }
+    }
+    .fax & {
+        pointer-events: none;
+    }
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.__hidden {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.__pc {
+    @include g.mq(tab) {
+        display: none !important;
+    }
+}
+
+.__sp {
+    display: none;
+    @include g.mq(tab) {
+        display: block !important;
+    }
+}
+
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
+.alignfull {
+    [data-has-sidebar=false] .c-entry__content > & {
+        margin-left: calc(-1 * var(--root--gap));
+        margin-right: calc(-1 * var(--root--gap));
+    }
+}
+
+.wp-block-image,
+.smb-media-text__figure {
+    img {
+        border-radius: 2.0rem;
+        overflow: hidden;
+    }
+}
+
+// ブロックの余白調整
+:root :where(p.has-background),
+:where(.has-background) {
+    padding: var(--root--gap);
+}

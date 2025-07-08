@@ -1,0 +1,38 @@
+@use '../global' as g;
+
+.l-footer {
+
+    border-top: 10px solid #f3f3f3;
+
+    // htmlを極力減らすために擬似クラスを使って背景設定。
+    // 背景色は直下の要素が特定のクラスを持つ場合に変数を変えるように。
+
+    &__item {
+        position: relative;
+        padding: var(--root--gap);
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--scope--background);
+            z-index: -1;
+        }
+        &:has(> [class*="-contact"]) {
+            --scope--background: #ebeff4;
+        }
+        &:has(> [class*="-contents"]) {
+            --scope--background: #fff;
+        }
+        &:has(> [class*="-copy"]) {
+            --scope--background: var(--root--color-primary);
+        }
+    }
+
+    // メインコンテンツ
+    &__about {
+    }
+
+    // コピーライト
+    &__copy {
+    }
+}

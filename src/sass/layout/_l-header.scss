@@ -1,0 +1,127 @@
+@use '../global' as g;
+
+.l-header-origin {
+    --scorp--transiton: all .3s;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 1px 20px rgba($color: #000, $alpha: 0.10);
+    z-index: 9999;
+    overflow: initial;
+    padding-inline: var(--root--gap);
+
+    @include g.mq(tab) {
+        padding-inline: var(--root--gap) 0;
+    }
+
+    // ヘッダーが非表示になった時のアニメーション今回不使用
+    // &[data-is-hidden='false'] {
+    //     transition: var(--scorp--transiton);
+    // }
+
+    // &[data-is-hidden='true'] {
+    //     opacity: 1;
+    //     overflow: initial;
+    //     transform: translateY(calc(-1 * var(--headerHeight)));
+    //     transition: var(--scorp--transiton);
+    // }
+
+    // 背景色
+    &::before {
+        position: absolute;
+        inset: 0;
+        content: '';
+        display: block;
+        background: #fff;
+        z-index: -1;
+    }
+
+    // 共通reset
+    ul {
+        list-style: none;
+    }
+
+    &__wrap {
+        display: grid;
+        gap: 0 2rem;
+        max-width: var(--root--maxWidth);
+        margin: 0 auto;
+
+        @include g.mq(pc) {
+            grid-template-columns: 25% 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas:
+                'logo actions'
+                'logo nav'
+            ;
+        }
+
+        @include g.mq(tab) {
+            grid-template-columns: 58.7% auto;
+            grid-template-rows: 6.4rem;
+            grid-template-areas:
+                'logo actions'
+            ;
+            padding-block: 0;
+        }
+    }
+
+    &__logo {
+        grid-area: logo;
+        display: flex;
+        align-items: center;
+        padding-block: 3.0rem;
+
+        @include g.mq(tab) {
+            max-width: 29rem;
+            padding-block: 1.0rem;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            @include g.mq(tab) {
+                height: 100%
+            }
+        }
+    }
+
+    &__nav {
+        grid-area: nav;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        pointer-events: painted;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+
+        @include g.mq(tab) {
+            position: fixed;
+            inset: var(--headerHeight) 0 0;
+            flex-direction: column;
+            align-items: normal;
+            justify-content: initial;
+            background: var(--root--color-white);
+            overflow-y: scroll;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: var(--root--animation);
+
+            &[aria-hidden='false'] {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &__actions {
+        grid-area: actions;
+        margin-block: 1.5rem .8rem;
+
+        @include g.mq(tab) {
+            margin-block: 0;
+        }
+    }
+
+}

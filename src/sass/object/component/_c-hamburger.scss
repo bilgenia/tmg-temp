@@ -1,0 +1,45 @@
+@use '../../global' as g;
+
+// ハンバーガーメニューのトグルボタン
+
+.c-hamburger {
+    position: relative;
+    height: 6.4rem;
+    border: none;
+    background: var(--root--color-primary);
+    appearance: none;
+    cursor: pointer;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+
+    &__bar {
+        position: absolute;
+        display: inline-block;
+        width: 3.4rem;
+        height: 2px;
+        background: #fff;
+        transform: translateX(-50%);
+        transition: .3s;
+        &:first-child {
+            top: 1.8rem;
+        }
+        &:nth-child(2) {
+            top: calc(50% - 1px);
+        }
+        &:last-child {
+            bottom: 1.8rem;
+        }
+        [aria-expanded="true"] & {
+            top: 50%;
+            &:first-child {
+                transform: translateX(-50%) translateY(-50%) rotate(45deg);
+            }
+            &:nth-child(2) {
+                display: none;
+            }
+            &:last-child {
+                transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+            }
+        }
+    }
+}

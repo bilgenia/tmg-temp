@@ -1,0 +1,88 @@
+<div class="p-contactform__input">
+    <dl class="p-contactform__box">
+        <dt class="p-contactform__title __required">Radio</dt>
+        <dd class="p-contactform__item">[radio your-radio class:p-contactform__radio use_label_element default:1 "aiueo" "kakikukeko" "sasisuseso"]</dd>
+    </dl>
+    <dl class="p-contactform__box">
+        <dt class="p-contactform__title __required">Text</dt>
+        <dd class="p-contactform__item">[text* your-name autocomplete:name]</dd>
+    </dl>
+    <dl class="p-contactform__box">
+        <dt class="p-contactform__title __required">フリガナ</dt>
+        <dd class="p-contactform__item">[text* your-kana]</dd>
+    </dl>
+    <dl class="p-contactform__box">
+        <dt class="p-contactform__title __required">メールアドレス</dt>
+        <dd class="p-contactform__item">[email* your-email autocomplete:email]</dd>
+    </dl>
+    <dl class="p-contactform__box">
+        <dt class="p-contactform__title __required">電話番号</dt>
+        <dd class="p-contactform__item">[tel* your-tel]</dd>
+    </dl>
+    <dl class="p-contactform__box">
+        <dt class="p-contactform__title __required">病院見学・インターンシップ希望日時</dt>
+        <dd class="p-contactform__item">
+            <div class="p-contactform__note">
+                <p>※ 第3希望までご記入ください。</p>
+                <p>※ 病院見学は『午前』『午後』、インターンシップは『半日』『1日』どちらかご希望を選択してください。</p>
+            </div>
+            <div class="p-contactform__date">
+                <p>第一希望：[date your-calendar-n1] [radio your-calendar-n1-time class:p-contactform__radio use_label_element default:1 "午前" "午後" "半日" "1日"]</p>
+                <p>第二希望：[date your-calendar-n2] [radio your-calendar-n2-time class:p-contactform__radio use_label_element default:1 "午前" "午後" "半日" "1日"]</p>
+                <p>第三希望：[date your-calendar-n3] [radio your-calendar-n3-time class:p-contactform__radio use_label_element default:1 "午前" "午後" "半日" "1日"]</p>
+            </div>
+        </dd>
+    </dl>
+    <dl class="p-contactform__box">
+        <dt class="p-contactform__title __required">メッセージ本文</dt>
+        <dd class="p-contactform__item">[textarea* your-message]</dd>
+    </dl>
+</div>
+
+<div class="p-contactform__submit">
+    <div>[acceptance your-acceptance]個人情報の取扱いについてに同意します。[/acceptance]<br>※個人情報保護方針については<a
+            href="/uminomieru/about/privacy/" target="_blank">コチラ</a></div>
+    <div>[submit "送信する"]</div>
+</div>
+
+
+# 自動返信関連の設計
+
+
+
+
+※本メールは自動返信です。
+
+ホームページ（[_site_url]）へお問い合わせがありました。
+以下の内容を確認してください。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+お名前：[your-name]
+電話番号：[your-tel]
+メールアドレス：[your-email]
+題名：[your-subject]
+メッセージ本文：
+[your-message]
+
+同意チェック：
+[your-acceptance]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+折返しの連絡をお願いいたします。
+
+
+
+
+※本メールは自動返信です。このアドレスにご返信いただいてもお答えすることができませんのでご了承ください。
+
+[your-name] 様
+
+お問い合わせいただきありがとうございます。
+担当より折り返しご連絡いたしますのでいましばらくお待ちくださいますようお願いいたします。
+
+熱海所記念病院
+https://atami-tokoro.jp
+メール：@tmg.or.jp
+電話番号：0557-82-3000

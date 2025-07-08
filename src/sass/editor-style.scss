@@ -1,0 +1,21 @@
+@use 'sass:meta';
+
+@include meta.load-css('root');
+
+html.block-editor-iframe__html {
+    font-size: 62.5%;
+}
+
+body.editor-styles-wrapper {
+    font-size: var(--root--fontSize);
+    font-family: YakuHanJP, 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    font-weight: var(--root--fontWeight-regular);
+    background-color: var(--root--color-white);
+    @include meta.load-css('reset');
+    @include meta.load-css('bundle');
+}
+
+h1.editor-post-title,
+h1.editor-post-title__input {
+    --_fluid-font-size: 3.6rem;
+}

@@ -1,0 +1,61 @@
+@use '../../global' as g;
+
+.smb-tabs {
+    position: relative;
+    margin: var(--_margin1) 0 0;
+    padding-top: 49px;
+
+    // 水平方向の場合のみ設計
+    &[data-orientation="horizontal"] {
+
+        .smb-tabs__tabs {
+            gap: 0.5rem;
+            padding-inline: 6.0rem;
+            margin-block: initial;
+            align-items: flex-end;
+            position: absolute;
+            width: 100%;
+            inset: 0 auto auto;
+            z-index: 1;
+        }
+        .smb-tabs__tab {
+            border: 1px solid var(--root--color-primary);
+            border-bottom: 0;
+            border-radius: 0 !important;
+            font-size: 1.8rem;
+            font-weight: var(--root--fontWeight-bold);
+            outline: 0;
+            padding-inline: 5rem !important;
+            height: 45px;
+
+            &[aria-selected="true"] {
+                position: relative;
+                height: 50px;
+                padding-top: 11px;
+                // 元のスタイルで透過されてたので色指定は不要
+            }
+
+            &[aria-selected="false"] {
+                opacity: 1;
+                border-bottom: 1px solid var(--root--color-primary);
+                &:hover {
+                    background-color: var(--root--color-secondary);
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &__body {
+        border: 0;
+    }
+}
+
+.smb-tab-panel {
+    border: 1px solid var(--root--color-primary);
+    padding: 4.0rem 6.0rem;
+
+    @include g.mq(sp) {
+        padding: 4.0rem 2.0rem;
+    }
+}

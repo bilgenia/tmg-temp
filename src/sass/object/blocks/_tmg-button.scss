@@ -1,0 +1,66 @@
+@use '../../global' as g;
+@use 'sass:map';
+
+// アイコン設定をマップで管理
+$button-icons: (
+    'default': ('icon': var(--root--icon-button-normal), 'size': 1.5rem 1.5rem),
+    'download': ('icon': var(--root--icon-button-download), 'size': 1.825rem 1.685rem),
+    'blank': ('icon': var(--root--icon-button-blank), 'size': 2.266rem 1.74rem),
+    'telPC': ('icon': var(--root--icon-button-tel), 'size': 3.2rem 3.6rem),
+    'telSP': ('icon': var(--root--icon-button-tel-white), 'size': 2.3rem 2.3rem)
+);
+
+// アイコン設定のみを返すmixin
+@mixin get-button-icon($type: 'default') {
+    $config: map.get($button-icons, $type);
+    background-image: map.get($config, 'icon');
+    background-size: map.get($config, 'size');
+}
+
+.tmg-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--root--color-white);
+    background: var(--root--color-primary);
+    padding: 2.2rem 6.0rem;
+    border-radius: 100rem;
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: var(--root--fontWeight-bold);
+    text-align: center;
+
+    @include g.mq(pc) {
+        display: inline-flex;
+        width: 100%;
+        max-width: 30.0rem;
+    }
+
+    // アイコン基本設定(中央配置)
+    &::before {
+        position: absolute;
+        content: '';
+        display: block;
+        flex-shrink: 0;
+        inset: 0;
+        width: 2.8rem;
+        height: 2.8rem;
+        grid-area: icon;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin-block: auto;
+        margin-inline: auto 1.5rem;
+        // デフォルトアイコン設定
+        @include get-button-icon();
+
+        @include g.mq(pc) {
+            width: 3.6rem;
+            height: 3.6rem;
+            margin-inline: auto 2.0rem;
+        }
+    }
+
+}

@@ -1,0 +1,6 @@
+@use '../../global' as g;
+
+// 共通コンテナー
+.c-container {
+    padding-inline: var(--root--gap);
+}

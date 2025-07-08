@@ -1,0 +1,115 @@
+@use '../../global' as g;
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.tmg-visual-01 {
+    width: 100%;
+    position: relative;
+    height: auto;
+
+    // リセット
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .splide__track {
+        height: auto;
+    }
+
+    li {
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 500px;
+        max-height: 740px;
+
+        @include g.mq(sp) {
+            min-height: auto;
+        }
+    }
+
+    picture {
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    // ラップ & アニメーション設定
+    &__wrap {
+        width: fit-content;
+        background-color: rgba(255, 255, 255, 0.77);
+        padding: 1.9rem .8rem 1.8rem 3.8rem;
+        margin-left: auto;
+        opacity: 0;
+        @include g.mq(sp) {
+            padding: 1.0rem 0 1.0rem 2.0rem;
+        }
+
+        .c-lead, .c-title {
+            opacity: 0;
+        }
+
+        &[data-visual-text="true"] {
+            animation: slideIn 1.0s ease forwards;
+            animation-delay: .5s;
+
+            .c-lead {
+                animation: slideIn 1.0s ease forwards;
+                animation-delay: .7s;
+            }
+            .c-title {
+                animation: slideIn 1.0s ease forwards;
+                animation-delay: .9s;
+            }
+        }
+    }
+
+    // テキストオーバーレイ
+    &__text {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        inset: 0;
+        color: #000;
+        z-index: 2;
+        width: 100%;
+        max-width: var(--root--maxWidth);
+        padding: var(--root--gap);
+        margin: auto;
+        @include g.mq(sp) {
+            text-align: right;
+            padding: 0;
+        }
+    }
+
+    .c-lead {
+        font-size: clamp(1.6rem, 1.875vw, 9999px);
+        font-weight: var(--root--fontWeight-light);
+        font-family: 'Noto Serif JP', sans-serif;
+        @include g.mq(sp) {
+            padding-right: 9px;
+        }
+    }
+    .c-title {
+        font-size: clamp(2.8rem, 3.333vw, 9999px);
+        font-weight: var(--root--fontWeight-regular);
+        font-family: 'Noto Serif JP', sans-serif;
+    }
+}

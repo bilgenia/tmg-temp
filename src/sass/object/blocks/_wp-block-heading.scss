@@ -1,0 +1,54 @@
+@use '../../global' as g;
+
+// 見出しブロック
+
+@mixin setup {
+    border: 0;
+    background: none;
+    line-height: 1.5;
+    padding: 0;
+}
+
+h1.wp-block-heading {
+    @include setup;
+    font-size: clamp(2.8rem, 2.8rem + 0.2vw, 3rem);
+    font-weight: var(--root--fontWeight-bold);
+    color: var(--root--color-primary);
+}
+
+h2.wp-block-heading {
+    @include setup;
+    display: flex;
+    align-items: stretch;
+    gap: 1.5rem;
+    font-size: clamp(2.8rem, 2.8rem + 0.2vw, 3rem);
+    font-weight: var(--root--fontWeight-bold);
+    color: var(--root--color-black);
+
+    &:before {
+        content: "";
+        display: block;
+        flex-shrink: 0;
+        width: 6px;
+        border-left: 3px solid var(--root--color-primary);
+        border-right: 3px solid var(--root--color-accent);
+    }
+}
+
+h3.wp-block-heading {
+    @include setup;
+    font-size: clamp(1.8rem, 1.5rem + 1vw, 2.4rem);
+    font-weight: var(--root--fontWeight-regular);
+}
+
+h4.wp-block-heading {
+    @include setup;
+    font-size: clamp(1.6rem, 1.3rem + 0.8vw, 2rem);
+    font-weight: var(--root--fontWeight-regular);
+}
+
+h5.wp-block-heading {
+    @include setup;
+    font-size: clamp(1.4rem, 1.2rem + 0.6vw, 1.8rem);
+    font-weight: var(--root--fontWeight-regular);
+}

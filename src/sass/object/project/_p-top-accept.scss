@@ -1,0 +1,13 @@
+@use '../../global' as g;
+
+.p-top-accept {
+    margin-block: 6.0rem !important;
+
+    .p-top-heading__title {
+        margin-bottom: 6.0rem;
+
+        @include g.mq(sp) {
+            margin-bottom: 4.0rem;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@use '../../global' as g;
+
+.smb-step {
+    --smb-step--border-color: var(--root--color-primary);
+    --smb-step--number-size: 4.0rem;
+    .smb-step__item__number {
+        font-size: 1.4rem;
+        font-weight: var(--root--fontWeight-bold);
+        line-height: 1;
+        text-align: center;
+        background: var(--root--color-primary);
+    }
+    &__item {
+        &__title {
+            font-size: 1.8rem;
+            font-weight: var(--root--fontWeight-bold);
+        }
+    }
+}

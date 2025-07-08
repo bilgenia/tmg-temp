@@ -1,0 +1,133 @@
+@use '../../global' as g;
+
+// contact form 7
+
+.p-contactform {
+
+    &__input {
+        order: 1;
+    }
+
+    &__box {
+        display: grid;
+        grid-template-columns: .4fr 1fr;
+        align-items: center;
+        gap: 9.0rem;
+        width: 100%;
+        padding: 4.0rem 2.0rem;
+        border-top: 1px solid #ccc;
+        @include g.mq(sp) {
+            grid-template-columns: 1fr;
+            gap: 1.0rem;
+            padding: 3.0rem 0;
+        }
+    }
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.4rem;
+        @include g.mq(sp) {
+            width: 100%;
+            justify-content: initial;
+            gap: 1.5rem;
+        }
+        &.__required::after {
+            content: '必須';
+            right: 0;
+            font-size: 1.2rem;
+            color: var(--root--color-white);
+            background: var(--root--color-primary);
+            padding: 0 .9rem .2rem;
+        }
+    }
+
+    &__item {
+        display: block;
+        width: 100%;
+        input:not([type=radio],[type=date],[type=checkbox],[type=file]),
+        textarea {
+            width: 100%;
+            max-width: 100%;
+            border: 1px solid var(--root--color-primary);
+            border-radius: 0;
+            background-color: var(--root--color-secondary);
+            padding: 1.0rem 1.5rem;
+        }
+        textarea {
+            resize: none;
+            scrollbar-width: none;
+        }
+        input[type=radio] {
+            display: none;
+            & + span {
+                display: flex;
+                align-items: center;
+                gap: 1.0rem;
+                &::before {
+                    content: "";
+                    display: block;
+                    background-size: contain;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cg fill='%23fff' stroke='%230e3157' data-name='楕円形 158'%3E%3Ccircle cx='8' cy='8' r='8' stroke='none'/%3E%3Ccircle cx='8' cy='8' r='7.5' fill='none'/%3E%3C/g%3E%3C/svg%3E");
+                    width: 1.6rem;
+                    height: 1.6rem;
+                }
+            }
+            &:checked+span::before {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cg data-name='グループ 3243' transform='translate(-548 -562)'%3E%3Cg fill='%23fff' stroke='%230e3157' data-name='楕円形 157' transform='translate(548 562)'%3E%3Ccircle cx='8' cy='8' r='8' stroke='none'/%3E%3Ccircle cx='8' cy='8' r='7.5' fill='none'/%3E%3C/g%3E%3Ccircle cx='3' cy='3' r='3' fill='%230e3157' data-name='楕円形 159' transform='translate(553 567)'/%3E%3C/g%3E%3C/svg%3E");
+            }
+        }
+        // 日付入力のスタイル
+        input[type=date] {
+            border: 1px solid var(--root--color-primary);
+            border-radius: 0;
+            background-color: var(--root--color-secondary);
+            line-height: 2.4rem;
+            padding: .8rem 1.5rem;
+        }
+        select {
+            border: 1px solid var(--root--color-primary);
+            border-radius: 0;
+            background-color: var(--root--color-secondary);
+            line-height: 2.6rem;
+            padding: 1.1rem 1.5rem;
+        }
+        .wpcf7-not-valid-tip {
+            color: #BE0000;
+        }
+    }
+
+    &__note {
+        font-size: 1.4rem;
+        margin-block: 0 2.0rem;
+    }
+
+    &__date {
+        display: flex;
+        flex-direction: column;
+        gap: 2.0rem;
+    }
+
+    &__submit {
+        order: 3;
+        display: block;
+        text-align: center;
+        > div {
+            &:nth-child(n+2) {
+                margin-top: 2.0rem;
+            }
+        }
+
+        input[type=submit] {
+            width: 28.0rem;
+            margin: 0 auto;
+            @include g.mq(sp) {
+                width: 100%;
+            }
+        }
+
+        .wpcf7-spinner {
+            margin-top: 2.0rem;
+        }
+    }
+}

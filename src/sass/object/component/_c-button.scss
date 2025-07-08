@@ -1,0 +1,79 @@
+@use '../../global' as g;
+
+.c-button {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3.0rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @include g.mq(tab) {
+        grid-template-columns: 1fr;
+        gap: 2.0rem;
+    }
+
+    &__item {
+        a {
+            @include g.button;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--root--color-primary);
+            background-color: var(--root--color-white);
+            text-decoration: none;
+            gap: 3.0rem;
+            height: 12.0rem;
+            padding: 2.0rem;
+            transition: all 0.3s ease;
+
+            @include g.mq(sp) {
+                height: 8.0rem;
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                background-image: var(--scope--icon);
+                background-repeat: no-repeat;
+                background-size: var(--scope--icon-size, contain);
+                background-position: center;
+                aspect-ratio: 1 / 1;
+                line-height: 0;
+                width: 100%;
+                max-width: 5.5rem;
+            }
+
+            &[href^="tel:"] {
+                --scope--icon: url("@img/icon_button_tel.svg");
+                --scope--icon-size: 4.838rem;
+                @include g.mq(sp) {
+                    --scope--icon-size: 4.4rem;
+                }
+            }
+
+            &[href$="/contact/"] {
+                --scope--icon: url("@img/ico_button_mail.svg");
+                --scopr--icon-size: 5.1rem;
+                @include g.mq(sp) {
+                    --scope--icon-size: 5.086rem;
+                }
+            }
+
+            &[href$="/access/"] {
+                --scope--icon: url("@img/ico_button_access.svg");
+                --scope--icon-size: 4.021rem;
+                @include g.mq(sp) {
+                    --scope--icon-size: 4.021rem;
+                }
+            }
+
+            &:hover {
+                background: #e8f3fd;
+                text-decoration: underline;
+                box-shadow: 0 0 0 0 var(--root--color-primary),
+                            0 0 0 4px var(--root--color-primary) inset,
+                            0 0 0 0 var(--root--color-primary);
+            }
+        }
+    }
+}

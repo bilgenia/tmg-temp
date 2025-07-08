@@ -1,0 +1,92 @@
+@use '../../global' as g;
+
+// ページ内アンカーモジュール
+// デフォルトのリストブロックを入れ、ブロック自体にスタイルを当ててください。
+// ※ このモジュールはページ内リンク（href="#..."）の使用を想定しています。
+// 通常のリンク（href="..."）は想定外の使用となります。
+
+.tmg-anchor {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.0rem;
+    border-top: initial;
+    padding: 0;
+
+    > li {
+
+        + li {
+            margin-top: 0;
+        }
+
+        > a {
+            position: relative;
+            text-decoration: none;
+            display: flex;
+            gap: 1.8rem;
+            align-items: center;
+            color: var(--root--color-primary);
+            border: 1px solid var(--root--color-primary);
+            padding: 2rem 3rem;
+
+            @include g.mq(sp) {
+                gap: 1.6rem;
+                padding: 1.6rem 2rem;
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                width: 1.4rem;
+                height: .8rem;
+                flex-shrink: 0;
+                background-image: url('@/img/icon_tmg-anchor_arrow.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                transition: all .3s;
+            }
+
+            &:hover {
+                &::before {
+                    transform: translateY(3px);
+                }
+            }
+
+            // 通常のリンクが入れられた場合
+            &:not([href^="#"]) {
+                order: 1;
+                background: var(--root--color-primary);
+                color: var(--root--color-white);
+
+                &::before {
+                    order: 2;
+                    background-image: url('@/img/icon_tmg-anchor_arrow-white.svg');
+                    transform: rotate(-90deg);
+                }
+
+                &:hover {
+                    &::before {
+                        transform: rotate(-90deg) translateY(3px);
+                    }
+                }
+            }
+
+            // 代わりにJavaScriptで制御するためのクラスを追加
+            &.js-smooth-scroll {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__link {
+        .tmg-anchor__icon {
+            width: 1.4rem;
+            height: .8rem;
+            flex-shrink: 0;
+            background-image: url('@/img/icon_tmg-anchor_arrow.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: all .3s;
+        }
+    }
+}

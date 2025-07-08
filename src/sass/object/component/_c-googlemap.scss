@@ -1,0 +1,16 @@
+@use '../../global' as g;
+
+.c-googlemap {
+    width: 100%;
+    min-height: 280px;
+
+    @include g.mq(pc) {
+        height: 640px;
+    }
+    @include g.mq(tab) {
+        height: 45vw;
+    }
+    @include g.mq(sp) {
+        height: 45vw;
+    }
+}

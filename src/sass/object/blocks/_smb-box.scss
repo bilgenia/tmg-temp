@@ -1,0 +1,10 @@
+@use '../../global' as g;
+
+.smb-box {
+    padding: var(--root--gap);
+
+    &__background {
+        border-radius: 0;
+        border-color: var(--root--color-primary);
+    }
+} 

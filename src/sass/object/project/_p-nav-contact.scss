@@ -1,0 +1,68 @@
+@use '../../global' as g;
+
+.p-nav-contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-inline: 1px solid #eee;
+    padding: 0;
+    margin: 0;
+    @include g.mq(sp) {
+        display: flex;
+        justify-content: flex-end;
+        border-inline: 0;
+        border-block: 1px solid #eee;
+        width: 100%;
+    }
+
+    &__item {
+        &:nth-child(n+2) {
+            border-left: 1px solid #eee;
+        }
+        @include g.mq(sp) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            border: 0;
+            transition: all .2s;
+            [data-is-hidden="true"] > & {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+        }
+
+        > * {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            width: 100%;
+            transition: all .3s;
+            padding: .8rem;
+            @include g.mq(sp) {
+                flex-direction: row;
+                gap: 1.5rem;
+                padding: 1.0rem;
+            }
+            &::before {
+                content: '';
+                display: block;
+                width: 3.2rem;
+                height: 3.2rem;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            &:hover {
+                background: #ecf7ff;
+            }
+        }
+        &__tel::before {
+            // background-image: url(@/img/ico_tel.svg);
+        }
+        &__access::before {
+            // background-image: url(@/img/ico_access.svg);
+        }
+    }
+}

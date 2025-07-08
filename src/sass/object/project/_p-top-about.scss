@@ -1,0 +1,35 @@
+@use '../../global' as g;
+
+.p-top-about {
+    // background-image: url('~/img/img_top_about_back_pc.png');
+    background-color: #f6f6f6;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 6.0rem var(--root--gap);
+    margin-top: 0;
+
+    @include g.mq(sp) {
+        // background-image: url('~/img/img_top_about_back_sp.png');
+    }
+
+    .p-top-heading__title {
+        margin-bottom: 6.0rem;
+
+        @include g.mq(sp) {
+            margin-bottom: 4.0rem;
+        }
+    }
+
+    .smb-media-text__title {
+        font-size: 2.8rem;
+        color: var(--root--color-font);
+    }
+
+
+    .__sp-order-2 {
+        @include g.mq(sp) {
+            order: 2;
+        }
+    }
+}

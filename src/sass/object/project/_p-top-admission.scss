@@ -1,0 +1,170 @@
+@use '../../global' as g;
+
+.p-top-admission {
+    padding: 12.0rem var(--root--gap);
+    background-image: url('~/img/img_top_admission_back_pc.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include g.mq(sp) {
+        padding: 6.0rem var(--root--gap);
+        background-image: url('~/img/img_top_admission_back_sp.webp');
+    }
+
+    &__list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        max-width: calc(30.0rem * 3 + 8.0rem);
+        gap: 4.0rem;
+        padding: 0;
+        margin: 6.0rem 0 0;
+        justify-content: center;
+
+        @include g.mq(sp) {
+            gap: 2.0rem;
+            grid-template-columns: 1fr;
+            margin-top: 0;
+        }
+    }
+
+    &__item {
+        position: relative;
+        aspect-ratio: 1 / 1;
+        border-radius: 100%;
+        overflow: hidden;
+        background-color: #fff;
+        border: 0 solid var(--root--color-primary);
+        transition: all 0.15s linear;
+        margin: 0;
+
+        @include g.mq(sp) {
+            aspect-ratio: initial;
+            width: 100%;
+            border-radius: 75px;
+        }
+
+        &:hover {
+            background: var(--root--color-secondary);
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        a {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 25% 45% 30%;
+            grid-template-areas:
+                "blank"
+                "icon"
+                "name";
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            text-decoration: none;
+            color: var(--root--color-black);
+
+            @include g.mq(sp) {
+                grid-template-columns: calc(50% - 6rem) 1fr;
+                grid-template-rows: 12.0rem;
+                grid-template-areas:
+                    "icon name";
+                gap: 1.8rem;
+                border-radius: 75px;
+                padding: 0;
+            }
+
+            @include g.mq(pc) {
+                // ホバー時のボーダーは位置をネガティブにしてボーダーを太くして、radiusの描画バグ？対策にしてる
+                &:before {
+                    content: '';
+                    position: absolute;
+                    inset: -2px;
+                    width: calc(100% + 4px);
+                    height: calc(100% + 4px);
+                    border: 3px solid var(--root--color-primary);
+                    border-radius: 100%;
+                    pointer-events: none;
+                    z-index: 10;
+                    transition: all .3s linear;
+                    opacity: 0;
+                }
+
+                &:hover:before {
+                    opacity: 1;
+                }
+            }
+        }
+
+        figure {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            grid-area: icon;
+
+            @include g.mq(sp) {
+                width: 8.0rem;
+                height: 8.0rem;
+                margin-left: auto;
+            }
+
+            img {
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
+                // width: calc(var(--scope--width-pc) / 1920px * 100vw);
+                max-width: var(--scope--width-pc);
+                min-width: var(--scope--width-sp);
+                @include g.mq(sp) {
+                    // width: calc(var(--scope--width-sp) / 390px * 100vw);
+                    // max-width: var(--scope--width-sp);
+                }
+
+                &[data-icon="05"] {
+                    --scope--width-pc: 65.45px;
+                    --scope--width-sp: 41.30px;
+                }
+
+                &[data-icon="06"] {
+                    --scope--width-pc: 141.11px;
+                    --scope--width-sp: 59.03px;
+                }
+
+                &[data-icon="07"] {
+                    --scope--width-pc: 190.46px;
+                    --scope--width-sp: 93px;
+                }
+            }
+
+        }
+
+        p {
+            grid-area: name;
+            font-size: 1.8rem;
+            font-weight: var(--root--fontWeight-regular);
+            line-height: 1.5;
+            text-align: center;
+            margin-block: 0 auto;
+
+            @include g.mq(sp) {
+                text-align: left;
+                margin: 0;
+            }
+        }
+    }
+    .p-top-heading__title {
+        margin-bottom: 6.0rem;
+
+        @include g.mq(sp) {
+            margin-bottom: 4.0rem;
+        }
+    }
+}
