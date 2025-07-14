@@ -191,6 +191,67 @@ add_action('wp_enqueue_scripts', function () {
     }
 }, 100);
 
+// TMG Design Token Engine - ACFカスタムフィールドからCSS変数を生成
+function tmg_dte_generate_css_variables()
+{
+    // カラーフィールドの定義
+    $color_fields = [
+        'primary' => '--root--color-primary',
+        'secondary' => '--root--color-secondary',
+        'tertiary' => '--root--color-tertiary',
+        'border' => '--root--color-border',
+        'font' => '--root--color-font',
+        'back' => '--root--color-back'
+    ];
+
+    // CSSを構築
+    $css = ':root {';
+    $has_values = false;
+
+    foreach ($color_fields as $field => $css_var) {
+        // 複数のフィールド名パターンを試す
+        $field_patterns = [
+            'tmg_temp_options_temp_colors_' . $field,
+            'temp_colors_' . $field,
+            'temp_colors[' . $field . ']',
+            $field
+        ];
+
+        $color = null;
+
+        foreach ($field_patterns as $field_name) {
+            $color = get_field($field_name, 'option');
+            if ($color) {
+                break;
+            }
+        }
+
+        if ($color) {
+            $css .= $css_var . ': ' . esc_attr($color) . ';';
+            $has_values = true;
+        }
+    }
+
+    $css .= '}';
+
+    // 値がある場合のみCSSを追加
+    if ($has_values) {
+        // 環境に応じて適切なハンドル名を使用
+        $style_handle = (defined('WP_ENV') && WP_ENV === 'development') ? 'vite-style' : 'custom-style';
+
+        // wp_add_inline_styleが失敗した場合の代替案
+        $inline_result = wp_add_inline_style($style_handle, $css);
+
+        // wp_add_inline_styleが失敗した場合は直接出力
+        if (!$inline_result) {
+            add_action('wp_head', function() use ($css) {
+                echo '<style id="tmg-dte-variables">' . $css . '</style>';
+            });
+        }
+    }
+}
+add_action('wp_enqueue_scripts', 'tmg_dte_generate_css_variables');
+
 
 // ==============================================================================================================
 //
