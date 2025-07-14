@@ -5,13 +5,12 @@
 
 // オプション >　基本設定のフィールドを取得
 function get_field_value($field) {
-    // settingsを取得
-    $post = get_page_by_path('settings', OBJECT, 'tmg_options');
-    if ($post && !empty($field)) {
-        $field_value = get_field($field, $post->ID);
+    // SCFのオプションページから値を取得
+    $field_value = get_field($field, 'option');
+    if (!empty($field_value)) {
         return $field_value;
     } else {
-        return 'invalid field or post not found';
+        return 'invalid field or value not found';
     }
 }
 
@@ -19,11 +18,26 @@ function get_field_value($field) {
 function custom_field_shortcode($atts) {
     $atts = shortcode_atts(array(
         'name' => '',
+        'group' => 'fields', // デフォルトは基本設定
     ), $atts);
+
     if (empty($atts['name'])) {
         return 'フィールド名が指定されていません。';
     }
-    $field = 'tmg_options_fields_' . $atts['name'];
+
+    // グループに応じてフィールド名を構築
+    switch ($atts['group']) {
+        case 'fields':
+            $field = 'tmg_options_fields_' . $atts['name'];
+            break;
+        case 'web':
+            // webグループの場合、フィールド名にweb_プレフィックスを追加
+            $field = 'tmg_options_web_web_' . $atts['name'];
+            break;
+        default:
+            return 'サポートされていないグループです。fieldsまたはwebを指定してください。';
+    }
+
     return get_field_value($field);
 }
 
@@ -49,10 +63,10 @@ function load_module_shortcode($atts) {
 
     // 出力バッファリングを開始
     ob_start();
-    
+
     // ファイルを読み込む
     include $file_path;
-    
+
     // バッファの内容を取得してクリア
     $content = ob_get_clean();
 

@@ -89,35 +89,6 @@ add_action('admin_enqueue_scripts', 'admin_enqueue_assets', 99, 1);
 
 // ==============================================================================================================
 //
-// tmg_options
-//
-// ==============================================================================================================
-
-// オプション >　基本設定のフィールドを取得
-// 取得したフィールド情報を出力するショートコード
-// ショートコードを登録
-// これらの関数は shortcode.php に移動しました
-
-
-// ==============================================================================================================
-//
-// セキュリティ対策
-//
-// ==============================================================================================================
-
-// authorページの無効化
-add_filter('author_rewrite_rules', '__return_empty_array');
-function disable_author_archive(){
-    if(isset($_GET['author']) || preg_match('#/author/.+#', $_SERVER['REQUEST_URI'])){
-        wp_redirect(home_url('/404.php'));
-        exit;
-    }
-}
-add_action('init', 'disable_author_archive');
-
-
-// ==============================================================================================================
-//
 // テーマカラーフック(safariのノッチ部分対策)
 //
 // ==============================================================================================================
@@ -220,6 +191,7 @@ add_action('wp_enqueue_scripts', function () {
     }
 }, 100);
 
+
 // ==============================================================================================================
 //
 // モジュールのインクルード
@@ -242,4 +214,3 @@ safe_require_once(MY_SNOW_MONKEY_PATH . '/template/modules/loader.php');
 safe_require_once(MY_SNOW_MONKEY_PATH . '/template/modules/modified.php');
 safe_require_once(MY_SNOW_MONKEY_PATH . '/template/modules/shortcode.php');
 safe_require_once(MY_SNOW_MONKEY_PATH . '/template/modules/eyecatch.php');
-safe_require_once(MY_SNOW_MONKEY_PATH . '/template/modules/header-change.php');
