@@ -2,14 +2,14 @@
 
 .p-top-admission {
     padding: 12.0rem var(--root--gap);
-    background-image: url('~/img/img_top_admission_back_pc.webp');
+    // background-image: url('~/img/img_top_admission_back_pc.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
     @include g.mq(sp) {
         padding: 6.0rem var(--root--gap);
-        background-image: url('~/img/img_top_admission_back_sp.webp');
+        // background-image: url('~/img/img_top_admission_back_sp.webp');
     }
 
     &__list {

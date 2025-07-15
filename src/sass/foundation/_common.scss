@@ -16,7 +16,7 @@ body {
     font-size: clamp(14px, calc(13.2571436px + 0.190476vw), 9999px);
     font-family: YakuHanJP, 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
     font-weight: var(--root--fontWeight-regular);
-    line-height: 1.5;
+    line-height: var(--root--lineHeight);
     background-color: var(--root--color-white);
     &.is-fixed {
         height: 100%;

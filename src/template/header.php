@@ -17,12 +17,6 @@ use Framework\Helper;
         <div class="l-header-origin__actions">
             <ul class="p-header-actions__list">
                 <li class="p-header-actions__item">
-                    <a href="<?php echo esc_url(home_url('/access/')); ?>">アクセス</a>
-                </li>
-                <li class="p-header-actions__item">
-                    <a href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a>
-                </li>
-                <li class="p-header-actions__item">
                     <a href="tel:<?php echo do_shortcode('[customfield name="tel"]'); ?>"><?php echo do_shortcode('[customfield name="tel"]'); ?></a>
                 </li>
                 <li class="p-header-actions__item" data-name="subNav">

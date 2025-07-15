@@ -56,10 +56,11 @@
             &::before {
                 content: '';
                 flex-shrink: 0;
-                background-image: url('@/img/icon_arrow.svg');
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: center;
+                background-color: var(--root--color-primary);
+                mask-image: url('@/img/icon_arrow.svg');
+                mask-repeat: no-repeat;
+                mask-size: contain;
+                mask-position: center;
                 width: .7rem;
                 height: 1.2rem;
             }

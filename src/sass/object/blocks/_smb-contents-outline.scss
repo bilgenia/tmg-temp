@@ -4,16 +4,19 @@
 
     --scope--outline-color: var(--root--color-primary);
 
-    background: #fff;
+    background: var(--root--color-secondary);
+    padding: 2.0rem !important;
 
     .wpco {
         padding: 0;
     }
 
     .wpco__title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        line-height: 1.125;
         color: var(--root--color-font);
         padding: 0;
+        margin-bottom: 1.4rem;
     }
 
     .contents-outline {
@@ -29,6 +32,7 @@
             background-color: var(--root--color-primary);
             font-size: 1.4rem;
             font-weight: var(--root--fontWeight-regular);
+            color: #fff;
             flex-shrink: 0;
             width: 2.4rem;
             height: 2.4rem;

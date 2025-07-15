@@ -201,7 +201,8 @@ function tmg_dte_generate_css_variables()
         'tertiary' => '--root--color-tertiary',
         'border' => '--root--color-border',
         'font' => '--root--color-font',
-        'back' => '--root--color-back'
+        'back' => '--root--color-back',
+        'arrow' => '--root--color-primary'
     ];
 
     // CSSを構築
