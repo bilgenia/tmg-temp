@@ -3,10 +3,10 @@
 .p-nav-sub {
     display: flex;
     flex-direction: column;
-    gap: 4.0rem;
-    font-size: 1.8rem;
+    gap: g.rem(40);
+    font-size: g.rem(18);
     color: var(--root--color-primary);
-    margin: 2.0rem;
+    margin: g.rem(20);
 
     // PCでは不使用
     @include g.mq(pc) {
@@ -15,20 +15,20 @@
 
     &__tel {
         display: grid;
-        grid-template-columns: 4.6rem 1fr 4.6rem;
+        grid-template-columns: g.rem(46) 1fr g.rem(46);
         align-items: center;
         justify-content: center;
         text-align: center;
-        gap: 1.0rem;
+        gap: g.rem(10);
         width: 100%;
-        font-size: 2.4rem;
+        font-size: g.rem(24);
         font-weight: var(--root--fontWeight-bold);
         color: var(--root--color-white);
         background-color: var(--root--color-primary);
-        border-radius: 100rem;
+        border-radius: g.rem(100);
         text-decoration: none;
         word-break: break-all;
-        padding: 1.2rem 2.0rem;
+        padding: g.rem(12) g.rem(20);
 
         &::before {
             content: '';
@@ -37,7 +37,7 @@
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
-            width: 2.847rem;
+            width: g.rem(28.47);
             aspect-ratio: 1 / 1;
             margin: 0 auto;
         }
@@ -46,12 +46,12 @@
     //メニュー
     &__list {
         padding: 0;
-        margin-left: .5rem;
+        margin-left: g.rem(5);
 
         .menu-item {
             display: flex;
             align-items: center;
-            gap: 2.0rem;
+            gap: g.rem(20);
 
             &::before {
                 content: '';
@@ -61,12 +61,12 @@
                 mask-repeat: no-repeat;
                 mask-size: contain;
                 mask-position: center;
-                width: .7rem;
-                height: 1.2rem;
+                width: g.rem(7);
+                height: g.rem(12);
             }
 
             &:nth-child(n+2) {
-                margin-top: 2.0rem;
+                margin-top: g.rem(20);
             }
         }
 

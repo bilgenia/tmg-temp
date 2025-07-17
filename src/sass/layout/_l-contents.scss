@@ -3,7 +3,6 @@
 // コンテンツエリアのレイアウト上書き
 
 .l-contents {
-    --contents--gap: calc(var(--_margin1) * 1.5);
 
     // コンテナの横余白を上書き
     &__container {
@@ -16,8 +15,8 @@
         grid-template-columns: 100%;
         grid-template-rows: auto;
         [data-has-sidebar="true"] & {
-            grid-template-columns: 1fr 33.6rem;
-            gap: 4.0rem;
+            grid-template-columns: 1fr g.rem(336);
+            gap: g.rem(40);
             @include g.mq(tab) {
                 grid-template-columns: 1fr 30%;
             }
@@ -35,18 +34,18 @@
 
     &__header {
         background-color: #f5f5f5;
-        padding-block: 3.8rem;
+        padding-block: g.rem(38);
         margin-top: var(--headerHeight);
     }
 
     &__body {
-        padding-bottom: 5rem;
+        padding-bottom: g.rem(50);
 
         .home & {
             margin-top: var(--headerHeight);
         }
         .tmg-eyecatch + & {
-            margin-top: 4.1rem;
+            margin-top: g.rem(41);
         }
     }
 }

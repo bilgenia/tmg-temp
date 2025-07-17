@@ -3,11 +3,11 @@
 
 // アイコン設定をマップで管理
 $button-icons: (
-    'default': ('icon': var(--root--icon-button-normal), 'size': 1.5rem 1.5rem),
-    'download': ('icon': var(--root--icon-button-download), 'size': 1.825rem 1.685rem),
-    'blank': ('icon': var(--root--icon-button-blank), 'size': 2.266rem 1.74rem),
-    'telPC': ('icon': var(--root--icon-button-tel), 'size': 3.2rem 3.6rem),
-    'telSP': ('icon': var(--root--icon-button-tel-white), 'size': 2.3rem 2.3rem)
+    'default': ('icon': var(--root--icon-button-normal), 'size': g.rem(15) g.rem(15)),
+    'download': ('icon': var(--root--icon-button-download), 'size': g.rem(18.25) g.rem(16.85)),
+    'blank': ('icon': var(--root--icon-button-blank), 'size': g.rem(22.66) g.rem(17.4)),
+    'telPC': ('icon': var(--root--icon-button-tel), 'size': g.rem(32) g.rem(36)),
+    'telSP': ('icon': var(--root--icon-button-tel-white), 'size': g.rem(23) g.rem(23))
 );
 
 // アイコン設定のみを返すmixin
@@ -18,7 +18,7 @@ $button-icons: (
 }
 
 .smb-buttons {
-    gap: 2.3rem 3.3rem;
+    gap: g.rem(23) g.rem(33);
 }
 
 .smb-btn {
@@ -27,24 +27,24 @@ $button-icons: (
     align-items: center;
     color: var(--root--color-white);
     background: var(--root--color-primary);
-    font-size: 1.6rem;
+    font-size: g.rem(16);
     text-align: center;
     white-space: wrap;
     line-height: 1.5;
-    min-width: 30.0rem;
-    height: 6.0rem;
+    min-width: g.rem(300);
+    height: g.rem(60);
     border: 0;
-    border-radius: 100rem;
+    border-radius: g.rem(1000);
     padding: 0;
 
     // 文字の部分(左詰め・中央配置)
     &__label {
         font-weight: var(--root--fontWeight-bold);
-        padding-block: 1.425rem;
-        padding-inline: 6.0rem;
+        padding-block: g.rem(14.25);
+        padding-inline: g.rem(60);
         margin-inline: 0;
         @include g.mq(sp) {
-            padding-inline: 3.4rem;
+            padding-inline: g.rem(34);
         }
     }
 
@@ -55,20 +55,20 @@ $button-icons: (
         display: block;
         flex-shrink: 0;
         inset: 0;
-        width: 3.6rem;
-        height: 3.6rem;
+        width: g.rem(36);
+        height: g.rem(36);
         grid-area: icon;
         background-position: center center;
         background-repeat: no-repeat;
         margin-block: auto;
-        margin-inline: auto 2.0rem;
+        margin-inline: auto g.rem(20);
         // デフォルトアイコン設定
         @include get-button-icon();
 
         @include g.mq(sp) {
-            width: 2.8rem;
-            height: 2.8rem;
-            margin-inline: auto 1.5rem;
+            width: g.rem(28);
+            height: g.rem(28);
+            margin-inline: auto g.rem(15);
         }
     }
 
@@ -98,14 +98,14 @@ $button-icons: (
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2.4rem;
+        font-size: g.rem(24);
         font-weight: var(--root--fontWeight-bold);
         line-height: 1;
         text-decoration: none;
         color: var(--root--color-white);
         background: var(--root--color-primary);
-        padding: 1.2rem 2.0rem;
-        border-radius: 100rem;
+        padding: g.rem(12) g.rem(20);
+        border-radius: g.rem(1000);
         width: 100%;
         text-align: center;
 
@@ -123,17 +123,17 @@ $button-icons: (
             flex-shrink: 0;
             content: '';
             display: block;
-            width: 3.6rem;
-            height: 3.6rem;
+            width: g.rem(36);
+            height: g.rem(36);
             background-image: url('@/img/icon_button_tel_white.svg');
-            background-size: 3.6rem 3.6rem;
+            background-size: g.rem(36) g.rem(36);
             background-repeat: no-repeat;
             background-position: center;
-            margin: 0 2.6rem 0 0;
+            margin: 0 g.rem(26) 0 0;
 
             @include g.mq(pc) {
                 background-image: url('@/img/icon_button_tel.svg');
-                margin: 0 .8rem 0 0;
+                margin: 0 g.rem(8) 0 0;
             }
 
         }
@@ -155,7 +155,7 @@ $button-icons: (
     // ホーム判定の時に最小値変更
     [data-home-page-container="true"] & {
         @include g.mq(pc) {
-            min-width: 35.0rem;
+            min-width: g.rem(350);
         }
     }
 }

@@ -9,8 +9,8 @@
     &[data-orientation="horizontal"] {
 
         .smb-tabs__tabs {
-            gap: 0.5rem;
-            padding-inline: 6.0rem;
+            gap: g.rem(5);
+            padding-inline: g.rem(60);
             margin-block: initial;
             align-items: flex-end;
             position: absolute;
@@ -22,10 +22,10 @@
             border: 1px solid var(--root--color-primary);
             border-bottom: 0;
             border-radius: 0 !important;
-            font-size: 1.8rem;
+            font-size: g.rem(18);
             font-weight: var(--root--fontWeight-bold);
             outline: 0;
-            padding-inline: 5rem !important;
+            padding-inline: g.rem(50) !important;
             height: 45px;
 
             &[aria-selected="true"] {
@@ -53,9 +53,9 @@
 
 .smb-tab-panel {
     border: 1px solid var(--root--color-primary);
-    padding: 4.0rem 6.0rem;
+    padding: g.rem(40) g.rem(60);
 
     @include g.mq(sp) {
-        padding: 4.0rem 2.0rem;
+        padding: g.rem(40) g.rem(20);
     }
 }

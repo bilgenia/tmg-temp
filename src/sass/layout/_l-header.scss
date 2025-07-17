@@ -30,7 +30,7 @@
 
     &__wrap {
         display: grid;
-        gap: 0 2rem;
+        gap: 0 g.rem(20);
         max-width: var(--root--maxWidth);
         margin: 0 auto;
 
@@ -45,7 +45,7 @@
 
         @include g.mq(tab) {
             grid-template-columns: 58.7% auto;
-            grid-template-rows: 6.4rem;
+            grid-template-rows: g.rem(64);
             grid-template-areas:
                 'logo actions'
             ;
@@ -59,7 +59,7 @@
         align-items: center;
 
         @include g.mq(tab) {
-            max-width: 29rem;
+            max-width: g.rem(290);
         }
 
         a {

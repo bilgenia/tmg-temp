@@ -2,7 +2,7 @@
 
 .c-logo {
   width: 100%;
-  max-width: 31.8rem;
+  max-width: g.rem(318);
 
   @include g.mq(tab) {
     width: auto;

@@ -1,4 +1,5 @@
 @use 'sass:meta';
+@use './global' as g;
 
 @include meta.load-css('root');
 
@@ -17,5 +18,5 @@ body.editor-styles-wrapper {
 
 h1.editor-post-title,
 h1.editor-post-title__input {
-    --_fluid-font-size: 3.6rem;
+    --_fluid-font-size: g.rem(36);
 }

@@ -3,11 +3,11 @@
 
 // アイコン設定をマップで管理
 $button-icons: (
-    'default': ('icon': var(--root--icon-button-normal), 'size': 1.5rem 1.5rem),
-    'download': ('icon': var(--root--icon-button-download), 'size': 1.825rem 1.685rem),
-    'blank': ('icon': var(--root--icon-button-blank), 'size': 2.266rem 1.74rem),
-    'telPC': ('icon': var(--root--icon-button-tel), 'size': 3.2rem 3.6rem),
-    'telSP': ('icon': var(--root--icon-button-tel-white), 'size': 2.3rem 2.3rem)
+    'default': ('icon': var(--root--icon-button-normal), 'size': g.rem(15) g.rem(15)),
+    'download': ('icon': var(--root--icon-button-download), 'size': g.rem(18.25) g.rem(16.85)),
+    'blank': ('icon': var(--root--icon-button-blank), 'size': g.rem(22.66) g.rem(17.4)),
+    'telPC': ('icon': var(--root--icon-button-tel), 'size': g.rem(32) g.rem(36)),
+    'telSP': ('icon': var(--root--icon-button-tel-white), 'size': g.rem(23) g.rem(23))
 );
 
 // アイコン設定のみを返すmixin
@@ -26,17 +26,17 @@ $button-icons: (
     text-decoration: none;
     color: var(--root--color-white);
     background: var(--root--color-primary);
-    padding: 2.2rem 6.0rem;
-    border-radius: 100rem;
+    padding: g.rem(22) g.rem(60);
+    border-radius: g.rem(1000);
     width: 100%;
-    font-size: 1.6rem;
+    font-size: g.rem(16);
     font-weight: var(--root--fontWeight-bold);
     text-align: center;
 
     @include g.mq(pc) {
         display: inline-flex;
         width: 100%;
-        max-width: 30.0rem;
+        max-width: g.rem(300);
     }
 
     // アイコン基本設定(中央配置)
@@ -46,21 +46,20 @@ $button-icons: (
         display: block;
         flex-shrink: 0;
         inset: 0;
-        width: 2.8rem;
-        height: 2.8rem;
+        width: g.rem(28);
+        height: g.rem(28);
         grid-area: icon;
         background-position: center center;
         background-repeat: no-repeat;
         margin-block: auto;
-        margin-inline: auto 1.5rem;
+        margin-inline: auto g.rem(15);
         // デフォルトアイコン設定
         @include get-button-icon();
 
         @include g.mq(pc) {
-            width: 3.6rem;
-            height: 3.6rem;
-            margin-inline: auto 2.0rem;
+            width: g.rem(36);
+            height: g.rem(36);
+            margin-inline: auto g.rem(20);
         }
     }
-
 }

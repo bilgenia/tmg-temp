@@ -10,7 +10,7 @@
 
         &-list {
             columns: 2;
-            column-gap: 10.0rem;
+            column-gap: g.rem(100);
 
             @include g.mq(sp) {
                 columns: initial;
@@ -18,7 +18,7 @@
 
             > li {
                 break-inside: avoid;
-                margin-bottom: 4.0rem;
+                margin-bottom: g.rem(40);
             }
         }
     }
@@ -29,16 +29,16 @@
 
         li {
             position: relative;
-            padding-left: 1.3rem;
-            margin-top: 1.0rem;
+            padding-left: g.rem(13);
+            margin-top: g.rem(10);
 
             &::before {
                 content: '';
                 display: block;
-                width: .5rem;
-                height: 1.0rem;
+                width: g.rem(5);
+                height: g.rem(10);
                 position: absolute;
-                top: 1.0rem !important;
+                top: g.rem(10) !important;
                 left: 0;
                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5.998' height='10.58'%3E%3Cpath fill='none' stroke='%230e3157' d='M.353 10.227 5.291 5.29.354.353' data-name='パス 8243'/%3E%3C/svg%3E");
                 background-repeat: no-repeat;

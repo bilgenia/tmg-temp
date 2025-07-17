@@ -8,7 +8,7 @@ body .p-top-heading {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2.8rem;
+        font-size: g.rem(28);
         color: var(--root--color-black);
         background-color: initial;
         border: 0;
@@ -17,7 +17,7 @@ body .p-top-heading {
 
         span {
             border-bottom: 4px solid var(--root--color-primary);
-            padding-bottom: 1.0rem;
+            padding-bottom: g.rem(10);
         }
     }
 }

@@ -8,14 +8,14 @@
         list-style: none;
         display: grid;
         align-items: center;
-        grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
-        gap: 4.0rem;
+        grid-template-columns: repeat(auto-fit, minmax(g.rem(165), 1fr));
+        gap: g.rem(40);
         padding: 0;
         margin: 0;
         @include g.mq(sp) {
-            gap: 2.0rem;
+            gap: g.rem(20);
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: repeat(2, 17.5rem);
+            grid-template-rows: repeat(2, g.rem(280));
         }
     }
 
@@ -29,22 +29,22 @@
     &__link {
         display: grid;
         align-items: center;
-        grid-template-rows: 1fr 3.6rem;
-        gap: .9rem;
+        grid-template-rows: 1fr g.rem(36);
+        gap: g.rem(9);
         text-decoration: none;
-        border-radius: 3.0rem;
+        border-radius: g.rem(30);
         background: #fff;
-        padding: 3.6rem;
+        padding: g.rem(36);
         transition: all 0.3s ease-in-out;
         height: 100%;
         width: 100%;
         border: 1px solid transparent;
 
         @include g.mq(sp) {
-            border-radius: 2.5rem;
-            grid-template-rows: 1fr 3.2rem;
+            border-radius: g.rem(25);
+            grid-template-rows: 1fr g.rem(32);
             gap: 0;
-            padding: 2.0rem;
+            padding: g.rem(20);
         }
 
         span {
@@ -122,10 +122,10 @@
     }
 
     &__text {
-        font-size: 2.4rem;
+        font-size: g.rem(24);
         color: var(--root--color-black);
         @include g.mq(sp) {
-            font-size: 2.1rem;
+            font-size: g.rem(21);
         }
     }
 }

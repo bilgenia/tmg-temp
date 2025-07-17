@@ -17,8 +17,8 @@
 
     &__module {
         display: grid;
-        grid-template-columns: 16.0rem 22.0rem 1fr;
-        grid-gap: 3.0rem;
+        grid-template-columns: g.rem(160) g.rem(220) 1fr;
+        grid-gap: g.rem(30);
         grid-template-areas:
             'grid-A grid-B grid-C'
         ;
@@ -26,7 +26,7 @@
         width: 100%;
         height: auto;
         border-top: 1px solid var(--scope--border-color);
-        padding: 4.0rem;
+        padding: g.rem(40);
         * { // margin reset
             margin: 0;
             &:not(:last-child) ,
@@ -36,8 +36,8 @@
         }
         @include g.mq(sp) {
             grid-template-columns: 1fr 1fr;
-            grid-column-gap: 2.8rem;
-            grid-row-gap: 2.0rem;
+            grid-column-gap: g.rem(28);
+            grid-row-gap: g.rem(20);
             grid-template-areas:
                 'grid-A grid-B'
                 'grid-C grid-C'
@@ -54,7 +54,7 @@
     &__about {
         grid-area: grid-B;
         display: flex;
-        gap: 1.0rem;
+        gap: g.rem(10);
         width: 100%;
         flex-direction: column;
         p {
@@ -63,15 +63,15 @@
             width: 100%;
         }
         &__item1 {
-            font-size: 1.2rem;
+            font-size: g.rem(12);
             font-weight: var(--root--fontWeight-light);
         }
         &__item2 {
-            font-size: 2.1rem;
+            font-size: g.rem(21);
             font-weight: var(--root--fontWeight-medium);
         }
         &__item3 {
-            font-size: 1.4rem;
+            font-size: g.rem(14);
             font-weight: var(--root--fontWeight-light);
             color: #1462A8;
         }
@@ -83,15 +83,15 @@
         .smb-information__body {
             display: flex;
             flex-direction: column;
-            gap: 2.0rem;
+            gap: g.rem(20);
         }
         .smb-information__item {
             overflow: initial;
             &__label {
-                font-size: 1.4rem;
+                font-size: g.rem(14);
             }
             &__body {
-                font-size: 1.4rem;
+                font-size: g.rem(14);
             }
             .c-row__col {
                 padding: 0;
@@ -101,17 +101,17 @@
         .smb-information__item {
             overflow: initial;
             > .c-row {
-                gap: 2.0rem;
+                gap: g.rem(20);
                 @include g.mq(sp) {
-                    gap: .5rem;
+                    gap: g.rem(5);
                 }
                 > *:first-child {
                     width: 100%;
-                    min-width: 14.0rem;
-                    line-height: 2.8rem;
+                    min-width: g.rem(140);
+                    line-height: g.rem(28);
                 }
                 > *:last-child {
-                    --_item-width: calc(100% - 14.0rem - 2.0rem);
+                    --_item-width: calc(100% - g.rem(140) - g.rem(20));
                     @include g.mq(sp) {
                         --_item-width: 100%;
                     }
@@ -131,11 +131,11 @@
                 &::after {
                     content: '';
                     display: block;
-                    width: 3.0rem;
+                    width: g.rem(30);
                     height: 1px;
                     background: #ACD0E8;
                     @include g.mq(sp) {
-                        width: 6.0rem;
+                        width: g.rem(60);
                     }
                 }
             }

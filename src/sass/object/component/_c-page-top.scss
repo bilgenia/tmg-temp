@@ -3,7 +3,7 @@
 .c-page-top {
     position: fixed;
     width: 100%;
-    height: 6.0rem;
+    height: g.rem(60);
     transition: opacity .5s;
     opacity: 0;
     visibility: initial;
@@ -19,17 +19,17 @@
         position: absolute;
         left: auto;
         display: block;
-        width: 6.0rem;
-        height: 6.0rem;
+        width: g.rem(60);
+        height: g.rem(60);
         color: initial;
         pointer-events: all;
         background: var(--root--color-white);
-        border-radius: 1.0rem;
+        border-radius: g.rem(10);
         border: 2px solid var(--root--color-primary);
         overflow: hidden;
         transition: all .3s;
         @include g.mq(sp) {
-            right: 2.0rem;
+            right: g.rem(20);
         }
 
         > svg {
@@ -44,7 +44,7 @@
             background-image: url('@img/icon_pagetop.svg');
             background-repeat: no-repeat;
             background-position: top 40% center;
-            background-size: 2.9rem 1.4rem;
+            background-size: g.rem(29) g.rem(14);
             transition: all .3s ease;
         }
 

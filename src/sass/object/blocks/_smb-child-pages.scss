@@ -5,7 +5,7 @@
     .c-entries--text {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 2.0rem;
+        gap: g.rem(20);
         border: 0;
 
         @include g.mq(tab) {
@@ -24,11 +24,11 @@
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
-                gap: 1.0rem;
+                gap: g.rem(10);
                 color: var(--root--color-white);
                 background-color: var(--root--color-primary);
-                border-radius: 100rem;
-                padding: 1.8rem 3.0rem;
+                border-radius: g.rem(1000);
+                padding: g.rem(18) g.rem(30);
 
                 &:hover {
                     opacity: .77 !important;
@@ -44,8 +44,8 @@
                     position: relative;
                     display: block;
                     flex-shrink: 0;
-                    width: 1.5rem;
-                    height: 1.5rem;
+                    width: g.rem(15);
+                    height: g.rem(15);
                     background-image: var(--root--icon-button-normal);
                     background-size: contain;
                     background-position: center center;
@@ -55,7 +55,7 @@
             }
         }
         .c-entry-summary__title {
-            font-size: 1.8rem;
+            font-size: g.rem(18);
             font-weight: var(--root--fontWeight-bold);
         }
     }

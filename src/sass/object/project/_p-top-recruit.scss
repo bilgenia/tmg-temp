@@ -1,11 +1,11 @@
 @use '../../global' as g;
 
 .p-top-recruit {
-    padding: 6.0rem var(--root--gap);
+    padding: g.rem(60) var(--root--gap);
     background-color: #f3f3f3;
 
     @include g.mq(sp) {
-        padding: 4.0rem 0;
+        padding: g.rem(40) 0;
     }
 
     &__list {
@@ -13,14 +13,14 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 4.0rem;
+        gap: g.rem(40);
         padding: 0;
-        margin: 6.0rem auto 0;
+        margin: g.rem(60) auto 0;
 
         @include g.mq(tab) {
-            gap: 2.0rem;
+            gap: g.rem(20);
             max-width: initial;
-            margin-block: 4.0rem 0;
+            margin-block: g.rem(40) 0;
         }
 
         @include g.mq(sp) {
@@ -30,7 +30,7 @@
 
     &__item {
         position: relative;
-        width: calc((100% - 8.0rem) / 3);
+        width: calc((100% - g.rem(80)) / 3);
         height: 100%; // safariのバグ対策
         overflow: hidden;
         transition: all 0.3s ease;
@@ -44,15 +44,15 @@
             position: relative;
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 30rem 1fr;
-            min-height: 55rem;
+            grid-template-rows: g.rem(300) 1fr;
+            min-height: g.rem(550);
             justify-content: flex-start;
             width: 100%;
             height: 100%;
             text-decoration: none;
             color: var(--root--color-black);
             background-color: var(--root--color-white);
-            border-radius: 1.5rem;
+            border-radius: g.rem(15);
             overflow: hidden;
             box-sizing: border-box;
 
@@ -68,7 +68,7 @@
                 width: 100%;
                 height: 100%;
                 border: 1px solid var(--root--color-primary);
-                border-radius: 1.5rem;
+                border-radius: g.rem(15);
                 pointer-events: none;
                 z-index: 10;
                 transition: all .3s linear;
@@ -108,21 +108,21 @@
         }
 
         h3 {
-            font-size: 1.8rem;
+            font-size: g.rem(18);
             font-weight: var(--root--fontWeight-medium);
             line-height: 1.5;
-            margin-bottom: 1.4rem;
+            margin-bottom: g.rem(14);
         }
 
         p {
-            font-size: 1.5rem;
+            font-size: g.rem(15);
             font-weight: var(--root--fontWeight-regular);
             color: var(--root--color-font);
             line-height: 1.5;
             text-align: left;
             @include g.text-clamp(3);
             overflow: hidden;
-            margin-bottom: 2.0rem;
+            margin-bottom: g.rem(20);
 
             @include g.mq(sp) {
                 text-align: left;
@@ -133,20 +133,20 @@
     &__content {
         display: flex;
         flex-direction: column;
-        padding: 2.0rem 3.0rem;
+        padding: g.rem(20) g.rem(30);
         box-sizing: border-box;
 
         .smb-btn {
             width: 100%;
-            max-width: 3.5rem;
+            max-width: g.rem(35);
             min-width: 100%;
             margin-top: auto;
             @include g.mq(sp) {
-                margin-top: 2.0rem;
+                margin-top: g.rem(20);
             }
 
             &__label {
-                padding-inline: 1.425rem;
+                padding-inline: g.rem(14.25);
             }
         }
     }

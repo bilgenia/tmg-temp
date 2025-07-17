@@ -1,0 +1,29 @@
+@use "sass:math";
+
+//
+// clamp()の値を生成するmixin
+//
+
+@mixin fluid-prop($property, $min-size, $max-size) {
+    // アートボードのサイズ（固定値）
+    $min-viewport: 390;
+    $max-viewport: 1920;
+
+    // 単位を除去して計算可能にする
+    $min-size-no-unit: $min-size;
+    $max-size-no-unit: $max-size;
+
+    // calc(A + B) の A (vw) と B (rem) を計算
+    $slope: math.div($max-size-no-unit - $min-size-no-unit, $max-viewport - $min-viewport);
+    $y-intercept: math.div($min-size-no-unit - $slope * $min-viewport, 16); // 16はルートフォントサイズ
+
+    // clamp()の各値をremに変換
+    $min-rem: math.div($min-size-no-unit, 10) * 1rem;
+    $max-rem: math.div($max-size-no-unit, 10) * 1rem;
+
+    // preferred-valをcalc()で構築
+    $preferred-val: calc(#{$slope * 100}vw + #{$y-intercept}rem);
+
+    // CSSプロパティとして出力
+    #{$property}: clamp(#{$min-rem}, #{$preferred-val}, #{$max-rem});
+}

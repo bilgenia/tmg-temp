@@ -1,13 +1,13 @@
 @use '../../global' as g;
 
 .p-top-accept {
-    margin-block: 6.0rem !important;
+    margin-block: g.rem(60) !important;
 
     .p-top-heading__title {
-        margin-bottom: 6.0rem;
+        margin-bottom: g.rem(60);
 
         @include g.mq(sp) {
-            margin-bottom: 4.0rem;
+            margin-bottom: g.rem(40);
         }
     }
 }

@@ -4,8 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.0rem;
-    font-size: 1.4rem;
+    gap: g.rem(10);
+    font-size: g.rem(14);
     margin: 0;
     padding: 0;
     @include g.mq(sp) {
@@ -16,14 +16,14 @@
         display: flex;
         align-items: center;
         text-decoration: none;
-        gap: .85rem;
+        gap: g.rem(85);
         transition: all .3s;
         &:hover {
             text-decoration: underline;
             transition: all .3s;
             &::before {
-                left: 6px;
-                background-position-x: 3px;
+                left: g.rem(6);
+                background-position-x: g.rem(3);
             }
         }
 
@@ -31,8 +31,8 @@
             content: '';
             left: 0;
             display: block;
-            width: 1.0rem;
-            height: 1.0rem;
+            width: g.rem(10);
+            height: g.rem(10);
             // background-image: url('@img/');
             background-repeat: no-repeat;
             background-size: auto 100%;

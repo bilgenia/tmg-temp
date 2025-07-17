@@ -6,7 +6,7 @@
 .c-entry {
 
     &__header {
-        margin-bottom: 7.5rem;
+        margin-bottom: g.rem(75);
         position: relative;
         &:after {
             position: absolute;
@@ -23,10 +23,10 @@
 
     &__title {
         display: grid;
-        grid-template-columns: 4.5rem 1fr;
+        grid-template-columns: g.rem(45) 1fr;
         align-items: center;
-        gap: 2.0rem;
-        font-size: 3.0rem;
+        gap: g.rem(20);
+        font-size: g.rem(30);
         line-height: 1.5;
         font-weight: var(--root--fontWeight-bold);
         color: var(--root--color-black);
@@ -40,8 +40,8 @@
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
-            width: 4.5rem;
-            height: 4.5rem;
+            width: g.rem(45);
+            height: g.rem(45);
         }
     }
     &__footer {

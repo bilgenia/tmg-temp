@@ -16,7 +16,7 @@
     }
     &__item {
         &__title {
-            font-size: 2.1rem;
+            font-size: g.rem(21);
             font-weight: var(--root--fontWeight-regular);
             line-height: 1.476;
         }
@@ -25,13 +25,13 @@
     // オリジナルのカード型に変更するクラス
     // クラス名の命名規則は後で変える可能性あります。
     &.b-items-card {
-        --scope--gap: 4.0rem;
+        --scope--gap: g.rem(40);
 
         .smb-items__item {
             height: 100%;
             background-color: var(--root--color-white);
             border: 1px solid #e0e0e0;
-            border-radius: 2.0rem;
+            border-radius: g.rem(20);
             overflow: hidden;
             .has-background & {
                 border: none;
@@ -41,12 +41,12 @@
                 margin: 0;
             }
             &__title {
-                font-size: 2.4rem;
+                font-size: g.rem(24);
                 font-weight: var(--root--fontWeight-bold);
                 line-height: 1.5;
                 border-bottom: 1px solid var(--root--color-primary);
-                padding-bottom: 2.0rem;
-                margin-bottom: 2.0rem;
+                padding-bottom: g.rem(20);
+                margin-bottom: g.rem(20);
             }
             &__body {
                 padding: var(--scope--gap);

@@ -2,39 +2,39 @@
 
 .p-conversion-unit {
     background-color: var(--root--color-secondary);
-    padding: 4.0rem;
-    margin-top: 10rem;
+    padding: g.rem(40);
+    margin-top: g.rem(100);
     display: grid;
-    grid-template-columns: calc(50% - 2.0rem) calc(50% - 2.0rem);
-    gap: 4.0rem;
+    grid-template-columns: calc(50% - g.rem(20)) calc(50% - g.rem(20));
+    gap: g.rem(40);
     @include g.mq(tab) {
-        padding: 3rem 2rem;
-        margin-top: 5rem;
+        padding: g.rem(30) g.rem(20);
+        margin-top: g.rem(50);
         grid-template-columns: 1fr;
-        gap: 3.0rem;
+        gap: g.rem(30);
         margin-inline: calc(-1 * var(--root--gap));
     }
 
     &__box {
         background-color: var(--root--color-white);
-        border-radius: 2.0rem;
-        padding: 6.0rem 4.0rem;
+        border-radius: g.rem(20);
+        padding: g.rem(60) g.rem(40);
 
         @include g.mq(sp) {
-            padding: 4.0rem 2.0rem;
+            padding: g.rem(40) g.rem(20);
         }
     }
 
     &__name {
-        font-size: 2.1rem;
+        font-size: g.rem(21);
         text-align: center;
-        margin-bottom: 2.0rem;
+        margin-bottom: g.rem(20);
     }
 
     &__content {
-        font-size: 1.6rem;
+        font-size: g.rem(16);
         text-align: center;
-        margin-top: 2.0rem;
+        margin-top: g.rem(20);
     }
 
     .smb-btn-wrapper {

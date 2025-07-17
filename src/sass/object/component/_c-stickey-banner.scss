@@ -7,7 +7,7 @@
   transform: translate(0,-50%);
   display: flex;
   flex-direction: column;
-  gap: 3.0rem;
+  gap: g.rem(30);
   z-index: 9899;
 
   &__item {
@@ -27,8 +27,8 @@
     border: none;
     background: none;
     cursor: pointer;
-    width: 2.2rem;
-    height: 2.2rem;
+    width: g.rem(22);
+    height: g.rem(22);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Cg stroke='%234d80b9' data-name='グループ 3188'%3E%3Cg fill='%23fff' data-name='楕円形 153'%3E%3Ccircle cx='11' cy='11' r='11' stroke='none'/%3E%3Ccircle cx='11' cy='11' r='10.5' fill='none'/%3E%3C/g%3E%3Cg fill='none' stroke-width='2' data-name='グループ 3101'%3E%3Cpath d='m6.964 7 8 8' data-name='線 477'/%3E%3Cpath d='m14.964 7-8 8' data-name='パス 11600'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     background-position: center;
     background-repeat: no-repeat;

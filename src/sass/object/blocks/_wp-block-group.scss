@@ -5,28 +5,28 @@
 
 .wp-block-group.is-layout-grid {
     background-color: var(--root--color-white);
-    gap: 12.0rem;
+    gap: g.rem(120);
 
     @include g.mq(sp) {
-        gap: 8.8rem;
+        gap: g.rem(88);
     }
 
     > * {
         position: relative;
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
-        padding: 4.0rem;
+        padding: g.rem(40);
         overflow: initial;
 
         @include g.mq(sp) {
-            padding: 2.0rem;
+            padding: g.rem(20);
         }
 
         &:not(:last-child)::before {
             content: '';
             position: absolute;
             inset: 0;
-            margin: auto auto -9.4rem;
-            width: 7.4rem;
+            margin: auto auto g.rem(-94);
+            width: g.rem(74);
             aspect-ratio: 1 / 1;
             background-image: url(../img/icon_flow_arrow.svg);
             background-size: contain;
@@ -34,8 +34,8 @@
             background-position: center;
 
             @include g.mq(sp) {
-                width: 4.8rem;
-                margin: auto auto -6.8rem;
+                width: g.rem(48);
+                margin: auto auto g.rem(-68);
             }
         }
     }

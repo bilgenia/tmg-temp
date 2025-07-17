@@ -1,9 +1,9 @@
-@use './break' as g;
+@use './rem' as g;
 
 // ボタン系の共通設計
 @mixin button {
     text-align: center;
-    font-size: 2.4rem;
+    font-size: g.rem(24);
     line-height: 1.5;
     font-weight: var(--root--fontWeight-medium);
     text-decoration: none;

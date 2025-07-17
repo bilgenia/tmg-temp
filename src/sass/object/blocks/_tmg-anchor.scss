@@ -9,7 +9,7 @@
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 2.0rem;
+    gap: g.rem(20);
     border-top: initial;
     padding: 0;
 
@@ -23,22 +23,22 @@
             position: relative;
             text-decoration: none;
             display: flex;
-            gap: 1.8rem;
+            gap: g.rem(18);
             align-items: center;
             color: var(--root--color-primary);
             border: 1px solid var(--root--color-primary);
-            padding: 2rem 3rem;
+            padding: g.rem(20) g.rem(30);
 
             @include g.mq(sp) {
-                gap: 1.6rem;
-                padding: 1.6rem 2rem;
+                gap: g.rem(16);
+                padding: g.rem(16) g.rem(20);
             }
 
             &::before {
                 content: '';
                 display: block;
-                width: 1.4rem;
-                height: .8rem;
+                width: g.rem(14);
+                height: g.rem(8);
                 flex-shrink: 0;
                 background-image: url('@/img/icon_tmg-anchor_arrow.svg');
                 background-repeat: no-repeat;
@@ -80,8 +80,8 @@
 
     &__link {
         .tmg-anchor__icon {
-            width: 1.4rem;
-            height: .8rem;
+            width: g.rem(14);
+            height: g.rem(8);
             flex-shrink: 0;
             background-image: url('@/img/icon_tmg-anchor_arrow.svg');
             background-repeat: no-repeat;

@@ -3,13 +3,13 @@
 .c-button {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 3.0rem;
+    gap: g.rem(30);
     list-style: none;
     margin: 0;
     padding: 0;
     @include g.mq(tab) {
         grid-template-columns: 1fr;
-        gap: 2.0rem;
+        gap: g.rem(20);
     }
 
     &__item {
@@ -21,13 +21,13 @@
             color: var(--root--color-primary);
             background-color: var(--root--color-white);
             text-decoration: none;
-            gap: 3.0rem;
-            height: 12.0rem;
-            padding: 2.0rem;
+            gap: g.rem(30);
+            height: g.rem(120);
+            padding: g.rem(20);
             transition: all 0.3s ease;
 
             @include g.mq(sp) {
-                height: 8.0rem;
+                height: g.rem(80);
             }
 
             &::before {
@@ -40,30 +40,30 @@
                 aspect-ratio: 1 / 1;
                 line-height: 0;
                 width: 100%;
-                max-width: 5.5rem;
+                max-width: g.rem(55);
             }
 
             &[href^="tel:"] {
                 --scope--icon: url("@img/icon_button_tel.svg");
-                --scope--icon-size: 4.838rem;
+                --scope--icon-size: calc(77.408 / 16 * 1rem);
                 @include g.mq(sp) {
-                    --scope--icon-size: 4.4rem;
+                    --scope--icon-size: calc(70.4 / 16 * 1rem);
                 }
             }
 
             &[href$="/contact/"] {
                 --scope--icon: url("@img/ico_button_mail.svg");
-                --scopr--icon-size: 5.1rem;
+                --scope--icon-size: calc(81.6 / 16 * 1rem);
                 @include g.mq(sp) {
-                    --scope--icon-size: 5.086rem;
+                    --scope--icon-size: calc(81.376 / 16 * 1rem);
                 }
             }
 
             &[href$="/access/"] {
                 --scope--icon: url("@img/ico_button_access.svg");
-                --scope--icon-size: 4.021rem;
+                --scope--icon-size: calc(64.336 / 16 * 1rem);
                 @include g.mq(sp) {
-                    --scope--icon-size: 4.021rem;
+                    --scope--icon-size: calc(64.336 / 16 * 1rem);
                 }
             }
 

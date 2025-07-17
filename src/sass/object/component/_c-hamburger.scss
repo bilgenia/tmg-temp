@@ -4,7 +4,7 @@
 
 .c-hamburger {
     position: relative;
-    height: 6.4rem;
+    height: g.rem(64);
     border: none;
     background: var(--root--color-primary);
     appearance: none;
@@ -15,19 +15,19 @@
     &__bar {
         position: absolute;
         display: inline-block;
-        width: 3.4rem;
+        width: g.rem(34);
         height: 2px;
         background: #fff;
         transform: translateX(-50%);
         transition: .3s;
         &:first-child {
-            top: 1.8rem;
+            top: g.rem(18);
         }
         &:nth-child(2) {
             top: calc(50% - 1px);
         }
         &:last-child {
-            bottom: 1.8rem;
+            bottom: g.rem(18);
         }
         [aria-expanded="true"] & {
             top: 50%;

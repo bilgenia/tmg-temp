@@ -1,18 +1,18 @@
 @use '../../global' as g;
 
 .p-top-info {
-    padding-block: 6.0rem;
+    padding-block: g.rem(60);
     margin-block: 0;
     @include g.mq(sp) {
-        padding-block-start: 4.0rem;
+        padding-block-start: g.rem(40);
     }
 
     &__title {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 2.6rem;
+        gap: g.rem(26);
         @include g.mq(sp) {
-            gap: 1.9rem;
+            gap: g.rem(19);
         }
     }
 
@@ -23,6 +23,6 @@
     }
 
     &__button {
-        margin-top: 4.0rem;
+        margin-top: g.rem(40);
     }
 }

@@ -4,8 +4,12 @@
 // 基本的にはここはACFで加工される想定。
 
 :root {
-    // 基本フォントサイズ
-    --root--fontSize: 1.6rem;
+
+    // 最大横幅
+    --root--maxWidth: calc(1440 / 16 * 1rem);
+    // 間隔調整
+    --root--gap: calc(40 / 16 * 1rem);
+
 
     // フォントの重み設定
     --root--fontWeight-tin: 100;
@@ -18,11 +22,6 @@
     // 字の高さ
     --root--lineHeight: 2.0;
 
-    // 最大横幅
-    --root--maxWidth: 1440px;
-
-    // 間隔調整
-    --root--gap: 4.0rem;
 
     // アニメーション共通値
     --root--animation: all .5s;
@@ -47,7 +46,7 @@
 
     @include g.mq(sp) {
         // 間隔調整
-        --root--gap: 2.0rem;
+        --root--gap: calc(20 / 16 * 1rem);
     }
 }
 

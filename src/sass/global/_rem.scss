@@ -1,0 +1,7 @@
+@use "sass:math";
+
+// XDでのpx指定を入れるとremに変換する
+
+@function rem($px) {
+    @return math.div($px, 16) * 1rem;
+}

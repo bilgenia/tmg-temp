@@ -6,7 +6,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 6.0rem var(--root--gap);
+    padding: g.rem(60) var(--root--gap);
     margin-top: 0;
 
     @include g.mq(sp) {
@@ -14,15 +14,15 @@
     }
 
     .p-top-heading__title {
-        margin-bottom: 6.0rem;
+        margin-bottom: g.rem(60);
 
         @include g.mq(sp) {
-            margin-bottom: 4.0rem;
+            margin-bottom: g.rem(40);
         }
     }
 
     .smb-media-text__title {
-        font-size: 2.8rem;
+        font-size: g.rem(28);
         color: var(--root--color-font);
     }
 

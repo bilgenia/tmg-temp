@@ -5,17 +5,17 @@
         tr {
             td {
                 border-color: var(--root--color-primary);
-                padding: 2.0rem;
+                padding: g.rem(20);
                 @include g.mq(sp) {
-                    padding: 1.5rem 2.0rem;
+                    padding: g.rem(15) g.rem(20);
                 }
             }
             th {
                 background: var(--root--color-accent);
                 border-color: var(--root--color-primary);
-                padding: 2.0rem;
+                padding: g.rem(20);
                 @include g.mq(sp) {
-                    padding: 1.5rem 2.0rem;
+                    padding: g.rem(15) g.rem(20);
                 }
             }
         }

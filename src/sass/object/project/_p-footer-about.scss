@@ -2,17 +2,17 @@
 
 .p-footer-about {
     display: grid;
-    grid-template-columns: 50.0rem 1fr;
+    grid-template-columns: g.rem(500) 1fr;
     align-items: flex-end;
-    gap: 2.0rem;
+    gap: g.rem(20);
     max-width: var(--root--maxWidth);
-    margin-block: 1.0rem 0;
+    margin-block: g.rem(10) 0;
     margin-inline: auto;
     z-index: initial;
     @include g.mq(tab) {
         grid-template-columns: 1fr;
         align-items: flex-start;
-        gap: 2.0rem;
+        gap: g.rem(20);
         margin: 0;
     }
 }

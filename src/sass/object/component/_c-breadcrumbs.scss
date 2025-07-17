@@ -6,8 +6,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 2.1rem;
-    font-size: 1.4rem;
+    gap: g.rem(21);
+    font-size: g.rem(14);
     margin-block-start: var(--_margin1) ;
 
     @include g.mq(sp) {
@@ -15,7 +15,7 @@
     }
 
     @include g.mq(sp) {
-        font-size: 1.2rem;
+        font-size: g.rem(12);
     }
 
     a {
@@ -38,10 +38,10 @@
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-position: center;
-                width: .55rem;
-                height: 1.1rem;
+                width: g.rem(5.5);
+                height: g.rem(11);
                 margin-block: 0;
-                margin-right: 2.1rem;
+                margin-right: g.rem(21);
             }
         }
     }

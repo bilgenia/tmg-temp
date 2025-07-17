@@ -4,8 +4,6 @@
 @import url('https://cdn.jsdelivr.net/npm/yakuhanjp@4.1.1/dist/css/yakuhanjp.css');
 
 html {
-    font-size: 62.5%;
-    /* デフォルトではスムーズスクロールを無効化 */
     scroll-behavior: auto;
     &:has(a[href="#body"]:target) {
         scroll-behavior: auto;
@@ -13,7 +11,6 @@ html {
 }
 
 body {
-    font-size: clamp(14px, calc(13.2571436px + 0.190476vw), 9999px);
     font-family: YakuHanJP, 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
     font-weight: var(--root--fontWeight-regular);
     line-height: var(--root--lineHeight);
@@ -96,7 +93,7 @@ a {
 .wp-block-image,
 .smb-media-text__figure {
     img {
-        border-radius: 2.0rem;
+        border-radius: g.rem(20);
         overflow: hidden;
     }
 }

@@ -7,11 +7,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: min-content 1fr;
-    gap: 1.9rem 8.0rem;
-    margin-bottom: 6.0rem !important;
+    gap: g.rem(19) g.rem(80);
+    margin-bottom: g.rem(60) !important;
 
     @include g.mq(sp) {
-        margin-bottom: 5.0rem !important;
+        margin-bottom: g.rem(50) !important;
     }
 
     // 左カラムの要素を縦に並べる
@@ -38,7 +38,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 2.0rem;
+            border-radius: g.rem(20);
             overflow: hidden;
         }
     }
@@ -47,18 +47,18 @@
     @include g.mq(sp) {
         display: flex;
         flex-direction: column;
-        gap: 2.0rem;
+        gap: g.rem(20);
     }
 
     // 共通のスタイル
     &--title {
-        font-size: 2.8rem;
+        font-size: g.rem(28);
         font-weight: var(--root--fontWeight-medium);
         color: var(--root--color-primary);
     }
 
     &--text {
-        font-size: 1.6rem;
+        font-size: g.rem(16);
     }
 
     &--image {
@@ -71,10 +71,10 @@
 
     &--link {
         display: block;
-        margin-top: 4.0rem;
+        margin-top: g.rem(40);
 
         @include g.mq(sp) {
-            margin-top: 2.0rem;
+            margin-top: g.rem(20);
         }
 
         img {
@@ -92,29 +92,29 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 6.0rem var(--root--gap);
+    padding: g.rem(60) var(--root--gap);
     background-color: var(--root--color-secondary);
 
     @include g.mq(sp) {
         // background-image: url('~/img/img_recruit_enviroment_back_sp.png');
-        padding: 4.0rem var(--root--gap) 6.0rem;
+        padding: g.rem(40) var(--root--gap) g.rem(60);
     }
 
     &--title {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2.8rem;
+        font-size: g.rem(28);
         color: var(--root--color-primary);
-        margin-bottom: 6.0rem;
+        margin-bottom: g.rem(60);
 
         @include g.mq(sp) {
-            margin-bottom: 4.0rem;
+            margin-bottom: g.rem(40);
         }
 
         span {
             border-bottom: 2px solid var(--root--color-primary);
-            padding-bottom: 1.0rem;
+            padding-bottom: g.rem(10);
         }
     }
 
@@ -122,15 +122,15 @@
         list-style: none;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 4.0rem;
+        gap: g.rem(40);
         padding: 0;
         margin: 0;
-        max-width: calc(30.0rem * 3 + 8.0rem);
+        max-width: calc(g.rem(300) * 3 + g.rem(80));
         margin-inline: auto;
 
         @include g.mq(sp) {
             grid-template-columns: 1fr;
-            gap: 3.0rem;
+            gap: g.rem(30);
             padding-inline: var(--root--gap);
         }
     }
@@ -164,10 +164,10 @@
 
     // smb-buttonsのスタイル
     .smb-buttons {
-        margin-top: 6.0rem;
+        margin-top: g.rem(60);
 
         @include g.mq(sp) {
-            margin-top: 4.0rem;
+            margin-top: g.rem(40);
         }
     }
     .smb-btn__label {

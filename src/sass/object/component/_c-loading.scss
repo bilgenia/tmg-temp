@@ -3,8 +3,8 @@
 .c-loading {
 
     --scope--size: 100vw;
-    --scope--width: 9.2rem;
-    --scope--height: 9.2rem;
+    --scope--width: g.rem(92);
+    --scope--height: g.rem(92);
     --scope--color-background: #fff;
     --scope--color-gradient-start: var(--root--color-secondary);
     --scope--color-gradient-end: var(--root--color-primary);
@@ -55,10 +55,10 @@
     [class^="loading-"] {
         position: relative;
         box-sizing: border-box;
-        width: 6.4rem;
-        height: 6.4rem;
+        width: g.rem(64);
+        height: g.rem(64);
         display: inline-flex;
-        margin: 10px 20px;
+        margin: g.rem(10) g.rem(20);
     }
     /* Loading 14 */
     @keyframes animation-14 {

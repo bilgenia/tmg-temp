@@ -7,34 +7,34 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 2.4rem;
+    font-size: g.rem(24);
     color: #0E3157;
-    margin: 2.0rem 0;
+    margin: g.rem(20) 0;
     &:nth-of-type(n+2) {
-        margin-top: 4.0rem;
+        margin-top: g.rem(40);
     }
     @include g.mq(sp) {
         flex-direction: column;
         align-items: initial;
-        gap: 1.0rem;
+        gap: g.rem(10);
     }
     .csv_btn.qi_data_link {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 1.0rem;
-        font-size: 1.2rem;
+        gap: g.rem(10);
+        font-size: g.rem(12);
         text-decoration: none;
         color: #fff;
         background: #1462a8;
-        padding: 1.0rem;
+        padding: g.rem(10);
         &::before {
             content: '';
             position: relative;
             display: block;
             flex-shrink: 0;
-            width: 2.2rem;
-            height: 2.2rem;
+            width: g.rem(22);
+            height: g.rem(22);
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='15'%3E%3Cg fill='%23fff' data-name='グループ 2543'%3E%3Cpath d='M0 13h16v2H0z' data-name='長方形 1419'/%3E%3Cpath d='M9 0v7H7V0z' data-name='長方形 1420'/%3E%3Cpath d='M8 12 3 7h10Z' data-name='多角形 3'/%3E%3C/g%3E%3C/svg%3E");
             background-size: auto;
             background-position: center center;
@@ -88,23 +88,23 @@
         position: relative;
         display: flex;
         align-items: center;
-        gap: 1.0rem;
+        gap: g.rem(10);
         color: #fff;
         background: #1462a8;
-        font-size: 1.8rem;
+        font-size: g.rem(18);
         text-align: center;
         text-decoration: none;
         white-space: initial;
         border: 0;
         border-radius: 0;
-        padding: 1.8rem 5.0rem;
+        padding: g.rem(18) g.rem(50);
         &::before {
             content: "";
             position: relative;
             display: block;
             flex-shrink: 0;
-            width: 2.2rem;
-            height: 2.2rem;
+            width: g.rem(22);
+            height: g.rem(22);
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22.485' height='17.645'%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='none' stroke='%23fff' d='M0 0h22.485v17.645H0z' data-name='長方形 287'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg fill='none' stroke='%23fff' stroke-miterlimit='10' clip-path='url(%23a)' data-name='グループ 508'%3E%3Cpath d='M.812 7.925h12.306v8.907H.812z' data-name='長方形 286'/%3E%3Cpath d='M5.379 5.78V3.875h12.306v8.906h-2.317' data-name='パス 1684'/%3E%3C/g%3E%3C/svg%3E");
             background-size: auto;
             background-position: center center;

@@ -5,18 +5,18 @@
     --scope--outline-color: var(--root--color-primary);
 
     background: var(--root--color-secondary);
-    padding: 2.0rem !important;
+    padding: g.rem(20) !important;
 
     .wpco {
         padding: 0;
     }
 
     .wpco__title {
-        font-size: 1.6rem;
+        font-size: g.rem(16);
         line-height: 1.125;
         color: var(--root--color-font);
         padding: 0;
-        margin-bottom: 1.4rem;
+        margin-bottom: g.rem(14);
     }
 
     .contents-outline {
@@ -25,28 +25,28 @@
         }
         a {
             align-items: flex-start;
-            padding-block: 1.1rem;
-            gap: .8rem;
+            padding-block: g.rem(11);
+            gap: g.rem(8);
         }
         a::before {
             background-color: var(--root--color-primary);
-            font-size: 1.4rem;
+            font-size: g.rem(14);
             font-weight: var(--root--fontWeight-regular);
             color: #fff;
             flex-shrink: 0;
-            width: 2.4rem;
-            height: 2.4rem;
+            width: g.rem(24);
+            height: g.rem(24);
             margin: 0;
         }
         li {
-            line-height: 2.4rem;
+            line-height: g.rem(24);
             li {
                 > a {
-                    padding-left: 2.4rem;
+                    padding-left: g.rem(24);
                 }
                 li {
                     > a {
-                        padding-left: 4.8rem;
+                        padding-left: g.rem(48);
                     }
                 }
             }

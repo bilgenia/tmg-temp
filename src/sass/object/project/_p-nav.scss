@@ -19,22 +19,22 @@
         position: relative;
         display: flex;
         align-items: center;
-        gap: 2.0rem;
-        font-size: 2.0rem;
+        gap: g.rem(20);
+        font-size: g.rem(20);
         font-weight: var(--root--fontWeight-medium);
         color: var(--root--color-black);
         grid-area: link;
         width: 100%;
         height: 100%;
-        min-height: 6.0rem;
+        min-height: g.rem(60);
         text-decoration: none;
         word-break: break-all;
-        padding: 1.0rem 2.0rem;
+        padding: g.rem(10) g.rem(20);
         z-index: +1;
         @include g.mq(tab) {
             align-items: center;
             justify-content: flex-start;
-            padding-inline: 3.0rem 2.3rem;
+            padding-inline: g.rem(30) g.rem(23);
         }
 
         &:before {
@@ -46,8 +46,8 @@
             mask-repeat: no-repeat;
             mask-size: contain;
             mask-position: center;
-            width: .7rem;
-            height: 1.2rem;
+            width: g.rem(7);
+            height: g.rem(12);
             @include g.mq(pc) {
                 content: none;
             }
@@ -75,7 +75,7 @@
         > .menu-item {
             @include g.mq(tab) {
                 display: grid;
-                grid-template-columns: 1fr 6.4rem;
+                grid-template-columns: 1fr g.rem(64);
                 grid-template-rows: auto;
                 grid-template-areas:
                     'link button'
@@ -88,7 +88,7 @@
                 overflow-y: hidden;
 
                 &[data-is-active="true"] {
-                    grid-template-rows: 6.0rem 1fr;
+                    grid-template-rows: g.rem(60) 1fr;
                 }
 
                 &:last-child {
@@ -101,7 +101,7 @@
 
             > a {
                 @include g.mq(pc) {
-                    padding: 1.2rem 2.0rem;
+                    padding: g.rem(12) g.rem(20);
                 }
 
                 &:hover {
@@ -208,7 +208,7 @@
             visibility: hidden;
             background-color: var(--root--color-secondary);
             z-index: -2;
-            padding: 3.7rem var(--root--gap);
+            padding: g.rem(37) var(--root--gap);
         }
 
         @include g.mq(tab) {
@@ -223,8 +223,8 @@
         // アイテムの部分
         > .menu-item {
             a {
-                padding-inline: 2.0rem;
-                gap: .8rem;
+                padding-inline: g.rem(20);
+                gap: g.rem(8);
 
                 @include g.mq(pc) {
                     border-bottom: 1px solid transparent;
@@ -233,14 +233,14 @@
                         background: #fff;
                         border-bottom: 1px solid var(--root--color-primary);
                         &::before {
-                            transform: translateX(.3rem);
+                            transform: translateX(g.rem(3));
                         }
                     }
                 }
 
                 @include g.mq(tab) {
-                    gap: 2.0rem;
-                    padding-inline: 5.0rem 2.0rem;
+                    gap: g.rem(20);
+                    padding-inline: g.rem(50) g.rem(20);
                 }
             }
             @include g.mq(tab) {

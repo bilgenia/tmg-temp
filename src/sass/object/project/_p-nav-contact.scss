@@ -39,17 +39,17 @@
             text-decoration: none;
             width: 100%;
             transition: all .3s;
-            padding: .8rem;
+            padding: g.rem(8);
             @include g.mq(sp) {
                 flex-direction: row;
-                gap: 1.5rem;
-                padding: 1.0rem;
+                gap: g.rem(15);
+                padding: g.rem(10);
             }
             &::before {
                 content: '';
                 display: block;
-                width: 3.2rem;
-                height: 3.2rem;
+                width: g.rem(32);
+                height: g.rem(32);
                 background-position: center;
                 background-size: contain;
                 background-repeat: no-repeat;

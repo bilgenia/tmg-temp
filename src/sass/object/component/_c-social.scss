@@ -7,8 +7,8 @@
 .c-social {
     a {
         display: block;
-        width: 4.0rem;
-        height: 4.0rem;
+        width: g.rem(40);
+        height: g.rem(40);
         text-indent: -9999px;
         text-decoration: none;
         background-position: center center;
@@ -34,7 +34,7 @@
     &__list {
         list-style: none;
         display: flex;
-        gap: 2.0rem;
+        gap: g.rem(20);
         padding: 0;
         margin: 0;
     }

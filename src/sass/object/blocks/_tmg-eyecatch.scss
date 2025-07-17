@@ -1,7 +1,7 @@
 @use '../../global' as g;
 
 .tmg-eyecatch {
-    margin-block: var(--headerHeight) 4.1rem;
+    margin-block: var(--headerHeight) g.rem(41);
 
     img {
         width: 100%;

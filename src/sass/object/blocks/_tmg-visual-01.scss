@@ -54,11 +54,11 @@
     &__wrap {
         width: fit-content;
         background-color: rgba(255, 255, 255, 0.77);
-        padding: 1.9rem .8rem 1.8rem 3.8rem;
+        padding: g.rem(19) g.rem(8) g.rem(18) g.rem(38);
         margin-left: auto;
         opacity: 0;
         @include g.mq(sp) {
-            padding: 1.0rem 0 1.0rem 2.0rem;
+            padding: g.rem(10) 0 g.rem(10) g.rem(20);
         }
 
         .c-lead, .c-title {

@@ -7,7 +7,7 @@
         &__item {
             > a {
                 position: relative;
-                font-size: 2.1rem;
+                font-size: g.rem(21);
                 font-weight: var(--root--fontWeight-medium);
                 transition: initial;
                 padding: 0;
@@ -26,29 +26,29 @@
                 + .wpaw-local-nav__sublist {
                     border-top: 0;
                     padding: 0;
-                    margin: 1.0rem 0 0 0.8rem;
+                    margin: g.rem(10) 0 0 g.rem(8);
                     @include g.mq(sp) {
-                        margin: 1.0rem 0 0;
+                        margin: g.rem(10) 0 0;
                     }
                 }
             }
         }
         &__subitem {
-            font-size: 1.6rem;
+            font-size: g.rem(16);
             padding: 0;
             @include g.mq(sp) {
                 position: relative;
             }
             &:nth-child(n+2) {
-                margin-top: 1.0rem;
+                margin-top: g.rem(10);
             }
             > a {
                 position: relative;
                 transition: initial;
-                padding-left: 1.3rem;
+                padding-left: g.rem(13);
                 @include g.mq(sp) {
                     width: 100%;
-                    padding-left: 2.0rem;
+                    padding-left: g.rem(20);
                     &:active {
                         background-color: #ECF7FF;
                     }
@@ -61,7 +61,7 @@
                             position: absolute;
                             bottom: 0;
                             content: '';
-                            width: calc(100% - 1.3rem);
+                            width: calc(100% - g.rem(13));
                             height: 1px;
                             background: #0E3157;
                         }
@@ -69,16 +69,16 @@
                 }
             }
             &__icon {
-                width: 0.5rem;
-                height: 1.0rem;
-                top: 1.0rem;
+                width: g.rem(5);
+                height: g.rem(10);
+                top: g.rem(10);
                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5.998' height='10.58'%3E%3Cpath fill='none' stroke='%230e3157' d='M.353 10.227 5.291 5.29.354.353' data-name='パス 8243'/%3E%3C/svg%3E");
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-position: center;
                 @include g.mq(sp) {
                     position: absolute;
-                    left: 0.8rem;
+                    left: g.rem(8);
                     z-index: +1;
                 }
                 svg {
@@ -88,7 +88,7 @@
             .wpaw-local-nav__sublist {
                 border-top: 0;
                 padding-top: 0;
-                margin: 1.0rem 0 0 1.8rem;
+                margin: g.rem(10) 0 0 g.rem(18);
             }
         }
     }
