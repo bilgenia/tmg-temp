@@ -1,0 +1,7 @@
+@use '../../global' as g;
+
+.wp-block-list {
+    ::marker {
+        color: var(--root--color-primary);
+    }
+}
