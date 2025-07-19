@@ -5,15 +5,17 @@
         tr {
             td {
                 border-color: var(--root--color-primary);
-                padding: g.rem(20);
+                line-height: 1.5;
+                padding: g.rem(16) g.rem(14);
                 @include g.mq(sp) {
                     padding: g.rem(15) g.rem(20);
                 }
             }
             th {
-                background: var(--root--color-accent);
+                background: var(--root--color-secondary);
                 border-color: var(--root--color-primary);
-                padding: g.rem(20);
+                line-height: 1.5;
+                padding: g.rem(16) g.rem(14);
                 @include g.mq(sp) {
                     padding: g.rem(15) g.rem(20);
                 }
@@ -33,22 +35,13 @@
     }
 
     .is-stacked-on-mobile {
-        th {
-            text-align: center;
-        }
         @include g.mq(tab) {
             border-top: 1px solid var(--root--color-primary);
             th {
                 border-top: none;
-                text-align: left;
             }
             td {
                 border-top: none;
-            }
-        }
-        @include g.mq(sp) {
-            th {
-                border-bottom: none;
             }
         }
     }
