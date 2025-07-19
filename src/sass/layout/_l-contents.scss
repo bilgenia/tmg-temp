@@ -6,7 +6,7 @@
 
     // コンテナの横余白を上書き
     &__container {
-        padding: 0 var(--root--gap);
+        padding: var(--headerHeight) var(--root--gap) 0;
     }
 
     // grid化

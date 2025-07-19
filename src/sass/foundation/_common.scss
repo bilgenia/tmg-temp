@@ -90,14 +90,6 @@ a {
     }
 }
 
-.wp-block-image,
-.smb-media-text__figure {
-    img {
-        border-radius: g.rem(20);
-        overflow: hidden;
-    }
-}
-
 // ブロックの余白調整
 :root :where(p.has-background),
 :where(.has-background) {

@@ -191,8 +191,8 @@ add_action('wp_enqueue_scripts', function () {
     }
 }, 100);
 
-// TMG Design Token Engine - ACFカスタムフィールドからCSS変数を生成
-function tmg_dte_generate_css_variables()
+//  SCFカスタムフィールドからCSS変数を生成
+function scf_generate_css_variables()
 {
     // カラーフィールドの定義
     $color_fields = [
@@ -202,7 +202,9 @@ function tmg_dte_generate_css_variables()
         'border' => '--root--color-border',
         'font' => '--root--color-font',
         'back' => '--root--color-back',
-        'arrow' => '--root--color-primary'
+        'arrow' => '--root--color-primary',
+        'button' => '--root--color-button',
+        'button_text' => '--root--color-button-text'
     ];
 
     // CSSを構築
@@ -251,7 +253,7 @@ function tmg_dte_generate_css_variables()
         }
     }
 }
-add_action('wp_enqueue_scripts', 'tmg_dte_generate_css_variables');
+add_action('wp_enqueue_scripts', 'scf_generate_css_variables');
 
 
 // ==============================================================================================================

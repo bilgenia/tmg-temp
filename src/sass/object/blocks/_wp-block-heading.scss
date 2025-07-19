@@ -6,45 +6,36 @@
 @mixin setup {
     border: 0;
     background: none;
+    color: var(--root--color-font);
+    font-weight: var(--root--fontWeight-bold);
     line-height: 1.5;
     padding: 0;
 }
-
-// 最小のフォントサイズ ÷ 最小のフォントサイズで止める画面サイズ ✕ 100=vwの値
 
 h2.wp-block-heading {
     @include setup;
     display: flex;
     align-items: stretch;
-    gap: clamp(1.5rem, 1.118rem + 1.57vw, 3rem);
+    gap: 10px;
     @include g.fluid-prop(font-size, 24, 26);
-    font-weight: var(--root--fontWeight-bold);
-    color: var(--root--color-black);
 
     &:before {
         content: "";
         display: block;
         flex-shrink: 0;
-        width: 6px;
-        border-left: 3px solid var(--root--color-primary);
-        border-right: 3px solid var(--root--color-accent);
+        width: 4px;
+        background-color: var(--root--color-primary);
     }
 }
 
 h3.wp-block-heading {
     @include setup;
     font-size: g.rem(21);
-    font-weight: var(--root--fontWeight-regular);
+    border-bottom: 1px solid var(--root--color-primary);
+    padding-bottom: g.rem(12);
 }
 
 h4.wp-block-heading {
     @include setup;
     font-size: g.rem(18);
-    font-weight: var(--root--fontWeight-regular);
-}
-
-h5.wp-block-heading {
-    @include setup;
-    font-size: clamp(1.4rem, 1.2rem + 0.6vw, 1.8rem);
-    font-weight: var(--root--fontWeight-regular);
 }

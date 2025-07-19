@@ -18,8 +18,8 @@
     $y-intercept: math.div($min-size-no-unit - $slope * $min-viewport, 16); // 16はルートフォントサイズ
 
     // clamp()の各値をremに変換
-    $min-rem: math.div($min-size-no-unit, 10) * 1rem;
-    $max-rem: math.div($max-size-no-unit, 10) * 1rem;
+    $min-rem: math.div($min-size-no-unit, 16) * 1rem;
+    $max-rem: math.div($max-size-no-unit, 16) * 1rem;
 
     // preferred-valをcalc()で構築
     $preferred-val: calc(#{$slope * 100}vw + #{$y-intercept}rem);
