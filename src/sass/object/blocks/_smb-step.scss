@@ -2,15 +2,16 @@
 
 .smb-step {
     --smb-step--border-color: var(--root--color-primary);
-    --smb-step--number-size: g.rem(40);
     .smb-step__item__number {
         font-size: g.rem(14);
         font-weight: var(--root--fontWeight-bold);
         line-height: 1;
         text-align: center;
         background: var(--root--color-primary);
+        border-radius: 0;
     }
     &__item {
+
         &__title {
             font-size: g.rem(18);
             font-weight: var(--root--fontWeight-bold);
