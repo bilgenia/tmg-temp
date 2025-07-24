@@ -9,38 +9,37 @@
     &[data-orientation="horizontal"] {
 
         .smb-tabs__tabs {
-            gap: g.rem(5);
-            padding-inline: g.rem(60);
-            margin-block: initial;
-            align-items: flex-end;
-            position: absolute;
+            gap: 0;
             width: 100%;
-            inset: 0 auto auto;
             z-index: 1;
         }
         .smb-tabs__tab {
-            border: 1px solid var(--root--color-primary);
-            border-bottom: 0;
+            background-color: var(--root--color-secondary);
+            border: 0;
             border-radius: 0 !important;
-            font-size: g.rem(18);
-            font-weight: var(--root--fontWeight-bold);
+            font-weight: var(--root--fontWeight-medium);
             outline: 0;
-            padding-inline: g.rem(50) !important;
-            height: 45px;
+            padding: g.rem(13) g.rem(45) !important;
+            @include g.mq(sp) {
+                padding: g.rem(13) g.rem(30) !important;
+            }
 
             &[aria-selected="true"] {
-                position: relative;
-                height: 50px;
-                padding-top: 11px;
-                // 元のスタイルで透過されてたので色指定は不要
+                background-color: #fff;
+                border-top: 1px solid var(--root--color-primary);
+                border-left: 1px solid var(--root--color-primary);
+                border-right: 1px solid var(--root--color-primary);
+                padding: g.rem(13) g.rem(44) g.rem(15) !important;
+                @include g.mq(sp) {
+                    padding: g.rem(13) g.rem(29) g.rem(15) !important;
+                }
             }
 
             &[aria-selected="false"] {
                 opacity: 1;
-                border-bottom: 1px solid var(--root--color-primary);
+                margin-bottom: 1px;
                 &:hover {
-                    background-color: var(--root--color-secondary);
-                    text-decoration: underline;
+                    background-color: var(--root--color-tertiary);
                 }
             }
         }
@@ -53,9 +52,5 @@
 
 .smb-tab-panel {
     border: 1px solid var(--root--color-primary);
-    padding: g.rem(40) g.rem(60);
-
-    @include g.mq(sp) {
-        padding: g.rem(40) g.rem(20);
-    }
+    padding: g.rem(30);
 }
